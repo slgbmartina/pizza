@@ -32,14 +32,20 @@
         <label><input type="radio" name="prize" value="okay">Okay</label>
         <label><input type="radio" name="prize" value="expensive">Expensive</label>
     </p>
-    <p>Your name?
-        <input type="text" name="fullname">
+    <p>
+        <label for="fullname">Your name?
+            <input type="text" name="fullname" id="fullname">
+        </label>
     </p>
-    <p>Your e-mail address?
-        <input type="email" name="fullname">
+    <p>
+        <label for="email">Your e-mail address?
+            <input type="email" name="email" id="email">
+        </label>
     </p>
-    <p>What can we do better?
-        <textarea name="suggestion" rows="6" cols="50" maxlength="800"></textarea>
+    <p>
+        <label for="suggestion">What can we do better?
+            <textarea name="suggestion" id="suggestion" rows="6" cols="50" maxlength="800"></textarea>
+        </label>
     </p>
     <input type="submit" value="Send">
 </form>
