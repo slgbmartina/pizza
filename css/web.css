@@ -10,17 +10,18 @@ body{
   background-color: #fff;
   padding: 0.2em;
   margin: 0;
-  border-style: solid;
-  border-width: 0px 0px thick 0px;
+
   width:100%;
 }
 header{
   background-color: lightblue;
   padding: 0.5em;
-  border-bottom-style: solid;
-  border-bottom-width: thick;
+  border-style: solid;
+  border-width: thick 0 thick 0;
   width: 100%;
+  overflow: hidden;
 }
+
 header h1{
   display: inline;
   padding-left: 0.5em;
@@ -52,7 +53,7 @@ nav ul a:hover {
   color: #fff200;
   }
 nav ul a:active {
-	color:#a5f;
+	color:#fff;
 }
 
 /* Images  */
@@ -66,6 +67,35 @@ img.restaurant{
     margin-left: auto;
     margin-right: auto;
 }
-p {
+
+/* footer */
+footer{
+  background-color: lightblue;
+  padding: 0.5em;
+  border-style: solid;
+  border-width: thick 0 thick 0;
+  width: 100%;
+  margin-bottom: 1em;
+  overflow: hidden;
+  /* Problem mit About seite, Footer zu hoch */
+  /*position: absolute;
+  bottom: 0; */
+
+}
+footer div{
+  width: 20%;
+  display: inline-block;
+}
+#openinghours{
+  margin-left: 2%;
+  float:left;
+}
+#quote{
+  margin-left:15%;
+  float: left;
+}
+#address{
+  margin-right: 0;
+  float: right;
 
 }
