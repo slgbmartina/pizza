@@ -1,101 +1,134 @@
 /* body */
-body{
-  font-family: Arial sans-serif;
-  font-size: 1em;
-  padding: 0;
-  margin: 0;
+body {
+    font-family: Arial sans-serif;
+    font-size: 1em;
+    padding: 0;
+    margin: 0;
+    background: #fc0 /*url("../images/background_pizza.jpg")*/ no-repeat center top 100%;
 }
+
 /* Header */
-#head{
-  background-color: #fff;
-  padding: 0.2em;
-  margin: 0;
+#head {
+    background-color: #fff;
+    padding: 0.2em;
+    margin: 0;
 
-  width:100%;
-}
-header{
-  background-color: lightblue;
-  padding: 0.5em;
-  border-style: solid;
-  border-width: thick 0 thick 0;
-  width: 100%;
-  overflow: hidden;
+    width: 100%;
 }
 
-header h1{
-  display: inline;
-  padding-left: 0.5em;
+header {
+    background-color: #3c3;
+    padding: 0.5em;
+    border-style: solid;
+    border-width: thick 0 thick 0;
+    width: 100%;
+    overflow: hidden;
 }
 
-nav{
-    display:inline;
-    float:right;
+h1 {
+    color: #fff;
+    text-shadow: 2px 2px 2px #000;
+}
+
+header h1 {
+    display: inline;
+    padding-left: 0.5em;
+    color: #000;
+    text-shadow: none;
+    margin: 0.25em;
+}
+
+
+nav {
+    display: inline;
+    float: right;
     padding-right: 1em;
 }
 
-nav ul{
-    list-style:none;
+nav ul {
+    list-style: none;
 }
 
-nav ul li{
-    display:inline-block;
+nav ul li {
+    display: inline-block;
 }
+
+nav ul li a {
+    display: block;
+    padding: 0.5em;
+    border: 1px solid #060;
+    border-radius: 0.5em;
+    margin: 0.25em;
+    text-decoration: none;
+    background-color: #060;
+}
+
 nav ul a:link {
-    color: #474dff;
-  }
+    color: #fff;
+}
+
 nav ul a:visited {
     color: #474dff;
-  }
-nav ul a:focus {
-	color:#fff;
 }
+
+nav ul a:focus {
+    color: #fff;
+}
+
 nav ul a:hover {
-  color: #fff200;
-  }
+    color: #fff200;
+}
+
 nav ul a:active {
-	color:#fff;
+    color: #fff;
 }
 
 /* Images  */
-img{
+img {
     max-width: 30%;
     margin-left: auto;
     margin-right: auto
 }
-img.restaurant{
+
+img.restaurant {
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
 /* footer */
-footer{
-  background-color: lightblue;
-  padding: 0.5em;
-  border-style: solid;
-  border-width: thick 0 thick 0;
-  width: 100%;
-  margin-bottom: 1em;
-  overflow: hidden;
-  /* Problem mit About seite, Footer zu hoch */
-  /*position: absolute;
-  bottom: 0; */
+footer {
+    background-color: #3c3;
+    padding: 0.5em;
+    border-style: solid;
+    border-width: thick 0 thick 0;
+    width: 100%;
+    margin-bottom: 1em;
+    overflow: hidden;
+    /* Problem mit About seite, Footer zu hoch */
+    /*position: absolute;
+    bottom: 0; */
 
 }
-footer div{
-  width: 20%;
-  display: inline-block;
+
+footer div {
+    width: 20%;
+    display: inline-block;
 }
-#openinghours{
-  margin-left: 2%;
-  float:left;
+
+#openinghours {
+    margin-left: 2%;
+    float: left;
 }
-#quote{
-  margin-left:15%;
-  float: left;
+
+#quote {
+    width: 25%;
+    margin: 0 auto;
+    float: left;
 }
-#address{
-  margin-right: 0;
-  float: right;
+
+#address {
+    margin-right: 2%;
+    float: right;
 
 }
