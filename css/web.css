@@ -1,4 +1,4 @@
-/* body */
+/* Body */
 body {
     font-family: Georgia;
     font-size: 1em;
@@ -203,11 +203,6 @@ footer {
     width: 100%;
     padding: .5em;
     overflow: hidden;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    clear: both;
 }
 
 footer div {
