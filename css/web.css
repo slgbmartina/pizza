@@ -2,27 +2,35 @@
 @import url('https://fonts.googleapis.com/css?family=Lobster');
 
 body {
-    font-family: Georgia;
+    font-family: Georgia serif;
     font-size: 1em;
     padding: 0;
     margin: 0;
     /*background: #ffc180 url("../images/pizza_from_above.jpeg") no-repeat center 10px 100%;*/
     background-color: #ffdab3;
+    overflow-x: hidden;
 }
 
 /* Header */
-#head {
-    background-color: #fff;
-    padding: 0.2em;
-    margin: 0;
-    width: 100%;
-}
 
 header {
     background-color: #331a00;
     padding: .5em;
     width: 100%;
     overflow: hidden;
+    position: fixed;
+    z-index: 1;
+}
+
+/* Content */
+#content
+{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    margin-top: 7%;
+    margin-bottom: 7%;
+    z-index: 0;
 }
 
 /* Titles*/
@@ -77,54 +85,35 @@ nav ul li a {
     margin-bottom: 1.0em;
     margin-right: .5em;
     text-decoration: none;
+    color: #fff;
     background-color: #663500;
     /*text-transform: uppercase;*/
     font-family: sans-serif;
 }
 
-nav ul a:link {
-    color: #fff;
-}
-
-nav ul a:visited {
-    color: #fff;
-}
-
-nav ul a:focus {
-    color: #fff;
-}
-
-nav ul a:hover {
-    color: #fff;
-    background-color: #ffce99;
-    border: 1px solid #ffce99;
-}
-
-nav ul a:active {
-    color: #fff;
+nav ul a:hover, nav ul a:active {
     background-color: #ffce99;
     border: 1px solid #ffce99;
 }
 
 /* Images  */
 img {
-
     margin-left: auto;
     margin-right: auto;
 }
 
 img.restaurant {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+}
+
+#options {
+    width: 100%;
+    text-align: center;
 }
 
 #options img {
-    margin-top: 5%;
-    margin-bottom: 5%;
-    margin-left: 5%;
-    display: block;
-    float: left;
+    margin: 5%;
+    display: inline-block;
 }
 
 #options a img:hover {
@@ -185,7 +174,7 @@ img.restaurant {
     margin-bottom: 1em;
     background-color: #331a00;
     font-size: 1em;
-    font-family: Georgia;
+    font-family: Georgia serif;
     border: none;
     border-radius: .25em;
     color: white;
@@ -203,10 +192,14 @@ img.restaurant {
 }
 
 /* Footer */
-footer {
+footer
+{
+    position: fixed;
+    bottom: 0;
     background-color: #331a00;
     color: #ffdab3;
     width: 100%;
+    height: 10%;
     padding: .5em;
     overflow: hidden;
 }
