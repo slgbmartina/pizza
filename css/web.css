@@ -130,6 +130,7 @@ img.restaurant {
 /*Pizza-, Drinks- and Salad-body*/
 .menu {
     display: inline-block;
+    vertical-align: top;
     margin-top: .5em;
     margin-bottom: 1.5em;
     margin-left: 3.75%;
@@ -142,13 +143,15 @@ img.restaurant {
 .menu p {
     display: inline-block;
     float: left;
-    margin: 0;
+    margin-top: .1em;
 }
 .price {
     display: inline-block;
     float: right;
+    margin-top: .1em;
 }
 .ingredients {
+
     clear: both;
 }
 .sauce {
