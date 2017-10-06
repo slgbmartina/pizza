@@ -1,11 +1,13 @@
 /* Body */
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+
 body {
     font-family: Georgia;
     font-size: 1em;
     padding: 0;
     margin: 0;
     /*background: #ffc180 url("../images/pizza_from_above.jpeg") no-repeat center 10px 100%;*/
-    background-color: #ffc180;
+    background-color: #ffdab3;
 }
 
 /* Header */
@@ -28,8 +30,7 @@ header {
     text-align: center;
     font-size: 250%;
     margin: 1em auto;
-    color: #fff;
-    text-shadow: 2px 2px 2px #000;
+    color: #000;
 }
 .title {
     text-align: center;
@@ -41,14 +42,17 @@ header {
 /* Navigation */
 #navtitle {
     display: inline;
+    font-family: Lobster, cursive;
     padding-left: .5em;
-    color: #fff;
+    color: #ffdab3;
     text-shadow: none;
-    margin-top: .5em;
+    margin-top: .2em;
     margin-bottom: .5em;
+    margin-left: .5em;
     text-decoration: none;
     float: left;
-    font-weight: 900;
+    font-weight: 800;
+    font-size: 1.2em;
 }
 
 nav {
@@ -68,12 +72,12 @@ nav ul li {
 nav ul li a {
     display: block;
     padding: .5em;
-    border: 1px solid #804200;
+    border: 1px solid #663500;
     border-radius: .5em;
     margin-bottom: 1.0em;
     margin-right: .5em;
     text-decoration: none;
-    background-color: #804200;
+    background-color: #663500;
     /*text-transform: uppercase;*/
     font-family: sans-serif;
 }
@@ -151,7 +155,6 @@ img.restaurant {
     margin-top: .1em;
 }
 .ingredients {
-
     clear: both;
 }
 .sauce {
@@ -202,7 +205,7 @@ img.restaurant {
 /* Footer */
 footer {
     background-color: #331a00;
-    color: #fff;
+    color: #ffdab3;
     width: 100%;
     padding: .5em;
     overflow: hidden;
