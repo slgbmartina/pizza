@@ -17,7 +17,6 @@ body {
 }
 
 header {
-    z-index: 2;
     background-color: #331a00;
     padding: .5em;
     width: 100%;
@@ -25,7 +24,6 @@ header {
 }
 
 #navtitle {
-    z-index: 1;
     display: inline;
     padding-left: .5em;
     color: #fff;
@@ -37,7 +35,10 @@ header {
     font-weight: 900;
 }
 
-h1 {
+#maintitle {
+    text-align: center;
+    font-size: 250%;
+    margin: 1em auto;
     color: #fff;
     text-shadow: 2px 2px 2px #000;
 }
@@ -61,7 +62,6 @@ nav ul li a {
     padding: .5em;
     border: 1px solid #804200;
     border-radius: .5em;
-    margin-top: .3em;
     margin-bottom: 1.0em;
     margin-right: .5em;
     text-decoration: none;
@@ -107,6 +107,18 @@ img.restaurant {
     margin-right: auto;
 }
 
+.menu img {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 5%;
+    display: block;
+    float: left;
+}
+
+.menu a img:hover {
+    opacity: .5;
+}
+
 /* footer */
 footer {
     background-color: #331a00;
@@ -127,17 +139,16 @@ footer div {
 
 #openinghours {
     margin-left: 2%;
-    margin-right: 15%;
+    margin-right: 14%;
     float: left;
 }
 
 #quote {
-    width: 25%;
+    width: 20%;
     margin-left: 10px;
     float: left;
 }
 
 #address {
-    margin-right: 2%;
     float: right;
 }
