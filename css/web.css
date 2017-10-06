@@ -127,7 +127,7 @@ img.restaurant {
     opacity: .5;
 }
 
-/*Pizzas*/
+/*Pizza-, Drinks- and Salad-body*/
 .menu {
     display: inline-block;
     margin-top: .5em;
@@ -155,17 +155,59 @@ img.restaurant {
     margin-left: .2em;
 }
 
-/* footer */
+/*Feedback*/
+.blocklabel {
+    display: block;
+    margin-top: .2em;
+    margin-bottom: .2em;
+}
+.blockinput {
+    width: 45%;
+}
+#feedback label {
+    display: block;
+    list-style-type: none;
+}
+.question {
+    text-align: left;
+    display: block;
+    margin-left: 35%;
+}
+#sendbutton {
+    margin-left: 35%;
+    width: 6%;
+    margin-bottom: 1em;
+    background-color: #331a00;
+    font-size: 1em;
+    font-family: Georgia;
+    border: none;
+    border-radius: .25em;
+    color: white;
+    padding: .25em;
+}
+#sendbutton:hover {
+    background-color: #804200;
+}
+
+/* About */
+#about {
+    width: 92%;
+    margin-left: 2%;
+    text-align: left;
+}
+
+/* Footer */
 footer {
     background-color: #331a00;
     color: #fff;
-    padding: 0.5em;
     width: 100%;
+    padding: .5em;
     overflow: hidden;
-    /* Problem mit About-Seite, Footer zu hoch */
-    /*position: absolute;
-    bottom: 0; */
-
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    clear: both;
 }
 
 footer div {

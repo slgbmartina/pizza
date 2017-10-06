@@ -23,34 +23,37 @@
   </header>
 
 <h1 class="title">Tell us what you think</h1>
-<form action="https://www.example.com/" method="post">
-    <p>How do you like our pizza?
-        <label><input type="radio" name="popularity" value="awesome" checked>Awesome</label>
-        <label><input type="radio" name="popularity" value="good">Good</label>
-        <label><input type="radio" name="popularity" value="okay">Okay</label>
-        <label><input type="radio" name="popularity" value="good">Poor</label>
+<form id="feedback" action="https://www.example.com/" method="post">
+    <p class="question">How do you like our pizza?
+        <label class="blocklabel"><input type="radio" name="popularity" value="awesome" checked>Awesome</label>
+        <label class="blocklabel"><input type="radio" name="popularity" value="good">Good</label>
+        <label class="blocklabel"><input type="radio" name="popularity" value="okay">Okay</label>
+        <label class="blocklabel"><input type="radio" name="popularity" value="good">Poor</label>
     </p>
-    <p>What do you think about our prizes?
-        <label><input type="radio" name="prize" value="fair" checked>Fair</label>
-        <label><input type="radio" name="prize" value="okay">Okay</label>
-        <label><input type="radio" name="prize" value="expensive">Expensive</label>
+    <p class="question">What do you think about our prizes?
+        <label class="blocklabel"><input type="radio" name="prize" value="fair" checked>Fair</label>
+        <label class="blocklabel"><input type="radio" name="prize" value="okay">Okay</label>
+        <label class="blocklabel"><input type="radio" name="prize" value="expensive">Expensive</label>
     </p>
-    <p>
-        <label for="fullname">Your name?
-            <input type="text" name="fullname" id="fullname">
+    <p class="question">
+        Your name?
+        <label for="fullname">
+            <input class="blockinput" type="text" name="fullname" id="fullname">
         </label>
     </p>
-    <p>
-        <label for="email">Your e-mail address?
-            <input type="email" name="email" id="email">
+    <p class="question">
+        Your e-mail address?
+        <label for="email">
+            <input class="blockinput" type="email" name="email" id="email">
         </label>
     </p>
-    <p>
-        <label for="suggestion">What can we do better?
-            <textarea name="suggestion" id="suggestion" rows="6" cols="50" maxlength="800"></textarea>
+    <p class="question">
+        What can we do better?
+        <label for="suggestion">
+            <textarea class="blockinput" name="suggestion" id="suggestion" rows="6" cols="50" maxlength="800"></textarea>
         </label>
     </p>
-    <input type="submit" value="Send">
+    <input id="sendbutton" type="submit" value="Send">
 </form>
 
 <footer>
