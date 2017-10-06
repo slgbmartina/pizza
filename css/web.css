@@ -23,6 +23,22 @@ header {
     overflow: hidden;
 }
 
+/* Titles*/
+#maintitle {
+    text-align: center;
+    font-size: 250%;
+    margin: 1em auto;
+    color: #fff;
+    text-shadow: 2px 2px 2px #000;
+}
+.title {
+    text-align: center;
+    font-size: 200%;
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
+
+/* Navigation */
 #navtitle {
     display: inline;
     padding-left: .5em;
@@ -33,14 +49,6 @@ header {
     text-decoration: none;
     float: left;
     font-weight: 900;
-}
-
-#maintitle {
-    text-align: center;
-    font-size: 250%;
-    margin: 1em auto;
-    color: #fff;
-    text-shadow: 2px 2px 2px #000;
 }
 
 nav {
@@ -96,9 +104,9 @@ nav ul a:active {
 
 /* Images  */
 img {
-    max-width: 30%;
+
     margin-left: auto;
-    margin-right: auto
+    margin-right: auto;
 }
 
 img.restaurant {
@@ -107,7 +115,7 @@ img.restaurant {
     margin-right: auto;
 }
 
-.menu img {
+#options img {
     margin-top: 5%;
     margin-bottom: 5%;
     margin-left: 5%;
@@ -115,8 +123,36 @@ img.restaurant {
     float: left;
 }
 
-.menu a img:hover {
+#options a img:hover {
     opacity: .5;
+}
+
+/*Pizzas*/
+.menu {
+    display: inline-block;
+    margin-top: .5em;
+    margin-bottom: 1.5em;
+    margin-left: 3.75%;
+    width: 20%;
+    overflow: hidden;
+}
+.menu img {
+    width: 100%;
+}
+.menu p {
+    display: inline-block;
+    float: left;
+    margin: 0;
+}
+.price {
+    display: inline-block;
+    float: right;
+}
+.ingredients {
+    clear: both;
+}
+.sauce {
+    margin-left: .2em;
 }
 
 /* footer */
