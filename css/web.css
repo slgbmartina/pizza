@@ -1,6 +1,10 @@
 /* Body */
 @import url('https://fonts.googleapis.com/css?family=Lobster');
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: Georgia serif;
     font-size: 1em;
@@ -223,4 +227,20 @@ footer div {
 
 #address {
     float: right;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 850px){
+    #navtitle {
+        display: inline-block;
+        float: none;
+        text-align: center;
+        margin: 0 auto;
+        border-style: dashed;
+    }
+    nav {
+        float: left;
+        display: inline-block;
+        overflow: hidden;
+    }
 }
