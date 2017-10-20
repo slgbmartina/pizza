@@ -7,6 +7,7 @@
         html
         {
             overflow-x: hidden;
+            font-family: Georgia serif;
         }
 
         body
@@ -45,6 +46,8 @@
             z-index: 1;
             background-color: #331a00;
             color: #ffdab3;
+            margin-top: 0;
+            margin-bottom: 0;
         }
 
     /* Specific Elements */
@@ -52,6 +55,7 @@
         /* Header */
             #header-title
             {
+                display: inline-block;
                 font-family: Lobster, cursive;
                 color: #ffdab3;
                 text-shadow: none;
@@ -59,20 +63,39 @@
                 width: 80%;
             }
 
+            #header-burger
+            {
+                display: inline-block;
+                width: 30px;
+                float: right;
+                margin-right: 15px;
+            }
+
+            .nav-button
+            {
+                padding: 5px;
+                border: 1px solid #663500;
+                border-radius: 5px;
+                background-color: #663500;
+            }
+
+            .nav-button:hover, .nav-button:active
+            {
+                background-color: #ffce99;
+                border: 1px solid #ffce99;
+            }
+
             nav ul
             {
                 list-style: none;
                 margin-left: 0;
                 margin-right: 0;
+                padding-left: 0;
             }
 
             nav li
             {
                 display: inline-block;
-                padding: .5em;
-                border: 1px solid #663500;
-                border-radius: .5em;
-                background-color: #663500;
                 /*text-transform: uppercase;*/
                 font-family: sans-serif;
             }
@@ -83,53 +106,242 @@
                 text-decoration: none;
             }
 
-            nav ul a:hover, nav ul a:active
-            {
-                background-color: #ffce99;
-                border: 1px solid #ffce99;
-            }
-
 /** RESPONSIVE PROPERTIES **/
 
-    @media (max-width: 425px)
+    @media (max-width: 690px)
     {
         /* Basic Elements */
 
             header
             {
-                text-align: center;
+                height: 85px;
+            }
+
+            header h1
+            {
+                padding-left: 15px;
             }
 
             #content
             {
                 position: relative;
-                padding: 0 20px;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                margin-top: 85px;
+                text-align: center;
             }
 
             #content img
             {
-                max-width: calc(100% - 40px);
+                max-width: calc(100% - 30px);
             }
 
             footer
             {
                 position: static;
                 text-align: center;
+                padding-left: 0;
+                padding-top: 15px;
+                padding-bottom: 15px;
             }
 
         /* Specific Elements */
 
             #header-title
             {
-                font-size: xx-large;
+                font-size: x-large;
+            }
+
+            header nav, #mainimage, #quote
+            {
+                display: none;
             }
     }
 
-    @media (min-width: 426px) and (max-width: 768px)
+    @media (min-width: 691px) and (max-width: 768px)
     {
         /* Basic Elements */
 
             header
             {
+                height: 85px;
             }
+
+            header h1
+            {
+                display: inline-block;
+                width: 46%;
+                padding-left: 15px;
+            }
+
+            header nav
+            {
+                display: inline-block;
+                float: right;
+                margin-top: 17.5px;
+                margin-right: 10px;
+                vertical-align: middle;
+            }
+
+            #header-burger
+            {
+                display: none;
+            }
+
+            #content
+            {
+                margin-top: 85px;
+                padding: 5px 0;
+                text-align: center;
+            }
+
+            footer
+            {
+                position: static;
+                padding-left: 0;
+                padding-top: 15px;
+                padding-bottom: 15px;
+            }
+
+        /* Specific Elements */
+
+            #openinghours
+            {
+                display: inline-block;
+                margin-left: 15px;
+            }
+
+            #address
+            {
+                float: right;
+                text-align: right;
+                margin-right: 15px;
+            }
+
+            #quote
+            {
+                display: none;
+            }
+    }
+
+    @media (min-width: 769px)
+    {
+        body
+        {
+            background-color: #ffdab3;
+        }
+
+        /* Specific Elements */
+
+        header
+        {
+            height: 85px;
+        }
+
+        header h1
+        {
+            display: inline-block;
+            width: 46%;
+            padding-left: 15px;
+        }
+
+        header nav
+        {
+            display: inline-block;
+            float: right;
+            margin-top: 17.5px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        #header-burger
+        {
+            display: none;
+        }
+
+        #content
+        {
+            margin-top: 85px;
+            padding: 5px 15px;
+        }
+
+        footer
+        {
+            position: fixed;
+            height: 100px;
+            bottom: 0;
+            padding-left: 0;
+            padding-bottom: 15px;
+        }
+
+        .menulist
+        {
+            margin: auto;
+        }
+
+        .menu
+        {
+            display: inline-block;
+            vertical-align: top;
+            margin-top: .5em;
+            margin-bottom: 1.5em;
+            margin-left: 3.75%;
+            width: 20%;
+            overflow: hidden;
+        }
+
+        .menu img
+        {
+            width: 100%;
+        }
+
+        .menu p
+        {
+            display: inline-block;
+            float: left;
+            margin-top: .1em;
+        }
+
+        .price
+        {
+            display: inline-block;
+            float: right;
+            margin-top: .1em;
+        }
+
+        .ingredients
+        {
+            clear: both;
+        }
+
+        .sauce
+        {
+            margin-left: .2em;
+        }
+
+        #openinghours
+        {
+            display: inline;
+            float: left;
+            margin-left: 15px;
+            width: 20%;
+        }
+
+        #quote
+        {
+            display: inline-block;
+            width: 30%;
+            margin-left: 13%;
+            text-align: center;
+            clear: none;
+        }
+
+        #address
+        {
+            display: inline;
+            float: right;
+            margin-right: 10px;
+            width: 20%;
+            text-align: right;
+        }
     }
