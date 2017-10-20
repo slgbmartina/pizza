@@ -43,6 +43,7 @@ header {
     font-size: 250%;
     margin: 1em auto;
     color: #000;
+    padding-top: .5em;
 }
 .title {
     text-align: center;
@@ -52,7 +53,7 @@ header {
 }
 
 /* Navigation */
-#header-title {
+#navtitle {
     display: inline;
     font-family: Lobster, cursive;
     padding-left: .5em;
@@ -232,7 +233,6 @@ footer div {
     float: right;
 }
 
-<<<<<<< HEAD
 /* Layout for extra big screens */
 @media (min-width: 2560px) {
     body    {
@@ -240,7 +240,44 @@ footer div {
     }
 }
 /* Layout for phones screens */
-@media (max-width: 736px) {
+@media (max-width: 1024px) {
+  body{
+    display: block;
+    float: none;
+    padding-bottom:60px
+  }
+  footer{
+    display: block;
+    position:fixed;
+    height: 170px;
+  }
+  footer #address, #openinghours {
+        width: 90%;
+        display: block;
+        float:none;
+      margin: 0 0 0.5em 0;
+  }
+    footer div p {
+       font-size: .9em;
+        margin: 0
+   }
+    img {
+        max-width: 80%;
+    }
+  #content{
+      margin: 0;
+  }
+    #maintitle {
+        margin: 0;
+        font-size: 150%;
+    }
+    header {
+      position:static;
+      float: none;
+    }
+    h1{
+
+    }
     .menulist{
         text-align: center;
     }
@@ -248,7 +285,7 @@ footer div {
         width: 250px;;
         display: inline-block;
     }
-    #header-title {
+    #navtitle {
         display: block;
         margin: 0 auto ;
         text-align: center;
@@ -275,23 +312,4 @@ footer div {
     #quote{
         display: none;
     }
-}
-/* Layout for smartphone screens */
-@media (max-width: 360px) {
-=======
-/* Media Queries */
-@media only screen and (max-width: 850px){
-    #header-title {
-        display: inline-block;
-        float: none;
-        text-align: center;
-        margin: 0 auto;
-        border-style: dashed;
-    }
-    nav {
-        float: left;
-        display: inline-block;
-        overflow: hidden;
-    }
->>>>>>> b141613b4b1f0dd0746f599c7b59dff227829bec
 }
