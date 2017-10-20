@@ -1,6 +1,10 @@
 /* Body */
 @import url('https://fonts.googleapis.com/css?family=Lobster');
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: Georgia serif;
     font-size: 1em;
@@ -228,6 +232,7 @@ footer div {
     float: right;
 }
 
+<<<<<<< HEAD
 /* Layout for extra big screens */
 @media (min-width: 2560px) {
     body    {
@@ -273,4 +278,20 @@ footer div {
 }
 /* Layout for smartphone screens */
 @media (max-width: 360px) {
+=======
+/* Media Queries */
+@media only screen and (max-width: 850px){
+    #navtitle {
+        display: inline-block;
+        float: none;
+        text-align: center;
+        margin: 0 auto;
+        border-style: dashed;
+    }
+    nav {
+        float: left;
+        display: inline-block;
+        overflow: hidden;
+    }
+>>>>>>> b141613b4b1f0dd0746f599c7b59dff227829bec
 }
