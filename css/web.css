@@ -52,7 +52,7 @@ header {
 }
 
 /* Navigation */
-#navtitle {
+#header-title {
     display: inline;
     font-family: Lobster, cursive;
     padding-left: .5em;
@@ -248,7 +248,7 @@ footer div {
         width: 250px;;
         display: inline-block;
     }
-    #navtitle {
+    #header-title {
         display: block;
         margin: 0 auto ;
         text-align: center;
@@ -281,7 +281,7 @@ footer div {
 =======
 /* Media Queries */
 @media only screen and (max-width: 850px){
-    #navtitle {
+    #header-title {
         display: inline-block;
         float: none;
         text-align: center;
