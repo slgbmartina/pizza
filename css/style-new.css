@@ -18,6 +18,7 @@
             height: 100%;
             width: 100%;
             overflow-x: hidden;
+            color: #46721C;
         }
 
         header
@@ -26,8 +27,8 @@
             position: fixed;
             top: 0;
             z-index: 1;
-            background-color: #331a00;
-            color: #ffdab3;
+            background-color: #D48729;
+            color: #F4F4F3;
         }
 
         #content
@@ -35,7 +36,7 @@
             width: 100%;
             height: 100%;
             z-index: 0;
-            background-color: #ffdab3;
+            background-color: #F4F4F3;
         }
 
         footer
@@ -44,8 +45,8 @@
             position: fixed;
             bottom: 0;
             z-index: 1;
-            background-color: #331a00;
-            color: #ffdab3;
+            background-color: #D48729;
+            color: #7F2111;
             margin-top: 0;
             margin-bottom: 0;
         }
@@ -57,7 +58,7 @@
             {
                 display: inline-block;
                 font-family: Lobster, cursive;
-                color: #ffdab3;
+                color: #7F2111;
                 text-shadow: none;
                 text-decoration: none;
                 width: 80%;
@@ -74,15 +75,15 @@
             .nav-button
             {
                 padding: 5px;
-                border: 1px solid #663500;
+                border: 1px solid #A82C17;
                 border-radius: 5px;
-                background-color: #663500;
+                background-color: #A82C17;
             }
 
             .nav-button:hover, .nav-button:active
             {
-                background-color: #ffce99;
-                border: 1px solid #ffce99;
+                background-color: #7F2111;
+                border: 1px solid #7F2111;
             }
 
             nav ul
@@ -105,6 +106,7 @@
                 color: #fff;
                 text-decoration: none;
             }
+            
 
 /** RESPONSIVE PROPERTIES **/
 
@@ -228,7 +230,7 @@
     {
         body
         {
-            background-color: #ffdab3;
+            background-color: #F4F4F3;
         }
 
         /* Specific Elements */
