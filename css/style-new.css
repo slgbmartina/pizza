@@ -107,7 +107,12 @@
                 color: #fff;
                 text-decoration: none;
             }
-
+        input#open-menu{
+            display:none;
+        }
+        input[type=checkbox]:checked ~ nav{
+            display: block;
+        }
 /*Feedback*/
 .blocklabel {
     display: block;
@@ -397,5 +402,8 @@
             margin-right: 10px;
             width: 20%;
             text-align: right;
+        }
+        label.open-menu-label{
+            display: nones;
         }
     }
