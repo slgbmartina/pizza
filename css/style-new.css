@@ -233,6 +233,7 @@
         body
         {
             background-color: #F4F4F3;
+            min-height: 1000%;
         }
 
         /* Specific Elements */
@@ -271,10 +272,17 @@
             padding: 5px 15px;
 
         }
-
+        #mainimage {
+            margin: 0 auto 0 auto;
+            display: block;
+        }
+        #options {
+            margin: 0 auto;
+            /* - W I P - */
+        }
         footer
         {
-            position: fixed;
+            position: static;
             height: 100px;
             bottom: 0;
             padding-left: 0;
