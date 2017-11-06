@@ -1,4 +1,4 @@
-/** CONSTANT PROPERTIES **/
+    /** CONSTANT PROPERTIES **/
 
     /* Basic Elements */
 
@@ -311,6 +311,9 @@
             padding: 5px 15px;
 
         }
+        #content h1{
+            text-align: center;
+        }
         #mainimage {
             margin: 0 auto 0 auto;
             display: block;
@@ -404,6 +407,7 @@
             text-align: right;
         }
         label.open-menu-label{
-            display: nones;
+            display: none;
         }
+
     }
