@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="../css/style-new.css">
         <title>Tony's Pizza Factory</title>
         <title>Feedback</title>
-        <!-- Autoren: Martina Schwab, Marcel Sidler (PiBS.BSc INF 2017.BE1) -->
+        <!-- Autoren: Martina Schwab, Marcel Sidler, Jeremy Roth (PiBS.BSc INF 2017.BE1) -->
     </head>
 
     <body>
@@ -31,7 +31,7 @@
 
           <section id="content">
                 <h1 class="title">Tell us what you think</h1>
-                <form id="feedback" action="https://www.example.com/" method="post">
+                <form onclick="validateForm()" name="feedback" id="feedback" action="https://www.example.com/" method="post">
                     <p class="question">How do you like our pizza?
                         <label class="blocklabel"><input type="radio" name="popularity" value="awesome" checked>Awesome</label>
                         <label class="blocklabel"><input type="radio" name="popularity" value="good">Good</label>
@@ -43,20 +43,18 @@
                         <label class="blocklabel"><input type="radio" name="prize" value="okay">Okay</label>
                         <label class="blocklabel"><input type="radio" name="prize" value="expensive">Expensive</label>
                     </p>
-                    <p class="question">Your name?
-                        <label for="fullname">
+                    <p class="question" id="namePara">
+                        <label for="fullname">Your name?
                             <input class="blockinput" type="text" name="fullname" id="fullname">
                         </label>
                     </p>
-                    <p class="question">
-                        Your e-mail address?
-                        <label for="email">
+                    <p class="question" id="emailPara">
+                        <label for="email">Your e-mail address?
                             <input class="blockinput" type="email" name="email" id="email">
                         </label>
                     </p>
-                    <p class="question">
-                        What can we do better?
-                        <label for="suggestion">
+                    <p class="question" id="textareaPara">
+                        <label for="suggestion">What can we do better?
                             <textarea class="blockinput" name="suggestion" id="suggestion" rows="6" cols="50" maxlength="800"></textarea>
                         </label>
                     </p>
@@ -85,5 +83,68 @@
                 </p>
             </div>
         </footer>
+    <script>
+        function validateForm() {
+            var button = document.getElementById("sendbutton");
+            if (checkName() && checkEmail() && checkTextarea()){
+                button.disabled = false;
+            }
+            else {
+                button.disabled = true;
+            }
+        }
+
+        function checkName() {
+            var feedback = document.getElementById("feedback");
+            var fullnameEl = document.getElementById("namePara");
+            var fullname = document.forms["feedback"]["fullname"].value;
+            if (fullname === "") {
+                var nameWarning = document.createElement("p");
+                var nameText = document.createTextNode("Name must not be empty.");
+                nameWarning.appendChild(nameText);
+                feedback.insertBefore(nameWarning, fullnameEl.nextSibling);
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+
+        function checkEmail() {
+            var feedback = document.getElementById("feedback");
+            var emailEl = document.getElementById("emailPara");
+            var email = document.forms["feedback"]["email"].value;
+            var splitAt = email.split("@");
+            if (splitAt.length === 2) {
+                var splitDot = splitAt[1].split(".");
+                if (splitDot.length === 2) {
+                    return true;
+                }
+            }
+            else {
+                var warning = document.createElement("p");
+                var emailText = document.createTextNode("Email must be of the form 'test@example.com'.");
+                warning.appendChild(emailText);
+                feedback.insertBefore(warning, emailEl.nextSibling);
+                return false;
+            }
+        }
+
+        function checkTextarea() {
+            var feedback = document.getElementById("feedback");
+            var textareaEl = document.getElementById("textareaPara");
+            var textarea = document.forms["feedback"]["suggestion"].value;
+            if (textarea.length >= 50) {
+                return true;
+            }
+            else {
+                var textWarning = document.createElement("p");
+                var textText = document.createTextNode("Please write at least 50 characters.");
+                textWarning.appendChild(textText);
+                feedback.insertBefore(textWarning, textareaEl.nextSibling);
+                return false;
+            }
+        }
+    </script>
     </body>
 </html>
