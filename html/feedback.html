@@ -1,153 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="A Pizzeria in Chicago">
-        <link rel="icon" href="../images/pizza-burger2.png">
-        <link rel="stylesheet" href="../css/style-new.css">
-        <title>Tony's Pizza Factory</title>
-        <title>Feedback</title>
-        <!-- Autoren: Martina Schwab, Marcel Sidler, Jeremy Roth (PiBS.BSc INF 2017.BE1) -->
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A Pizzeria in Chicago">
+    <link rel="icon" href="../images/pizza-burger2.png">
+    <link rel="stylesheet" href="../css/style-new.css">
+    <title>Tony's Pizza Factory</title>
+    <title>Feedback</title>
+    <!-- Autoren: Martina Schwab, Marcel Sidler, Jeremy Roth (PiBS.BSc INF 2017.BE1) -->
+</head>
 
-    <body>
-        <header>
-            <h1>
-                <a id="header-title" href="index.html">Tony's Pizza Factory</a>
-                <label for="open-menu" class="open-menu-label"><img id="header-burger" src="../images/pizza-burger.png" class="nav-button"></label>
-            </h1>
-            <input type="checkbox" id="open-menu">
-            <nav>
-                <ul>
-                    <li><a href="pizza.html" class="nav-button">Pizza</a></li>
-                    <li><a href="salad.html" class="nav-button">Salad</a></li>
-                    <li><a href="drinks.html" class="nav-button">Soft drinks</a></li>
-                    <li><a href="feedback.html" class="nav-button">Feedback</a></li>
-                    <li><a href="about.html" class="nav-button">About</a></li>
-                </ul>
-            </nav>
-        </header>
+<body>
+<header>
+    <h1>
+        <a id="header-title" href="index.html">Tony's Pizza Factory</a>
+        <label for="open-menu" class="open-menu-label"><img id="header-burger" src="../images/pizza-burger.png"
+                                                            class="nav-button"></label>
+    </h1>
+    <input type="checkbox" id="open-menu">
+    <nav>
+        <ul>
+            <li><a href="pizza.html" class="nav-button">Pizza</a></li>
+            <li><a href="salad.html" class="nav-button">Salad</a></li>
+            <li><a href="drinks.html" class="nav-button">Soft drinks</a></li>
+            <li><a href="feedback.html" class="nav-button">Feedback</a></li>
+            <li><a href="about.html" class="nav-button">About</a></li>
+        </ul>
+    </nav>
+</header>
 
-          <section id="content">
-                <h1 class="title">Tell us what you think</h1>
-                <form name="feedback" id="feedback" action="https://www.example.com/" method="post">
-                    <p class="question">How do you like our pizza?
-                        <label class="blocklabel"><input type="radio" name="popularity" value="awesome" checked>Awesome</label>
-                        <label class="blocklabel"><input type="radio" name="popularity" value="good">Good</label>
-                        <label class="blocklabel"><input type="radio" name="popularity" value="okay">Okay</label>
-                        <label class="blocklabel"><input type="radio" name="popularity" value="good">Poor</label>
-                    </p>
-                    <p class="question">What do you think about our prizes?
-                        <label class="blocklabel"><input type="radio" name="prize" value="fair" checked>Fair</label>
-                        <label class="blocklabel"><input type="radio" name="prize" value="okay">Okay</label>
-                        <label class="blocklabel"><input type="radio" name="prize" value="expensive">Expensive</label>
-                    </p>
-                    <p class="question" id="namePara">
-                        <label for="fullname">Your name?
-                            <input class="blockinput" type="text" name="fullname" id="fullname">
-                        </label>
-                    </p>
-                    <p class="question" id="emailPara">
-                        <label for="email">Your e-mail address?
-                            <input class="blockinput" type="email" name="email" id="email">
-                        </label>
-                    </p>
-                    <p class="question" id="textareaPara">
-                        <label for="suggestion">What can we do better?
-                            <textarea class="blockinput" name="suggestion" id="suggestion" rows="6" cols="50" maxlength="800"></textarea>
-                        </label>
-                    </p>
-                    <input onclick="validateForm()" id="sendbutton" type="submit" value="Send">
-                </form>
-          </section>
+<section id="content">
+    <h1 class="title">Tell us what you think</h1>
+    <form onsubmit="return(validateForm())" name="feedback" id="feedback" action="https://www.example.com/"
+          method="post">
+        <p class="question">How do you like our pizza?
+            <label class="blocklabel"><input type="radio" name="popularity" value="awesome" checked>Awesome</label>
+            <label class="blocklabel"><input type="radio" name="popularity" value="good">Good</label>
+            <label class="blocklabel"><input type="radio" name="popularity" value="okay">Okay</label>
+            <label class="blocklabel"><input type="radio" name="popularity" value="good">Poor</label>
+        </p>
+        <p class="question">What do you think about our prizes?
+            <label class="blocklabel"><input type="radio" name="prize" value="fair" checked>Fair</label>
+            <label class="blocklabel"><input type="radio" name="prize" value="okay">Okay</label>
+            <label class="blocklabel"><input type="radio" name="prize" value="expensive">Expensive</label>
+        </p>
+        <p class="question" id="namePara">
+            <label for="fullname">Your name?
+                <input class="blockinput" type="text" name="fullname" id="fullname">
+            </label>
+        </p>
+        <p class="question" id="emailPara">
+            <label for="email">Your e-mail address?
+                <input class="blockinput" type="email" name="email" id="email">
+            </label>
+        </p>
+        <p class="question" id="textareaPara">
+            <label for="suggestion">What can we do better?
+                <textarea class="blockinput" name="suggestion" id="suggestion" rows="6" cols="50"
+                          maxlength="800"></textarea>
+            </label>
+        </p>
+        <input id="sendbutton" type="submit" value="Send">
+    </form>
+</section>
 
-        <footer>
-            <div id="openinghours">
-                <p>
-                    Hours:<br>
-                    Mon - Thu: 11a.m. - 23a.m.<br>Fri - Sat: 11a.m. - 24a.m.<br>Sunday closed
-                </p>
-            </div>
-            <div id="quote">
-                <p>
-                <em>
-                    "The Pizzeria is one place I have been wanting to visit for a long time. The reason being their Rustica pizza which absolutely blew me away." - Jimmy
-                </em>
-                </p>
-            </div>
-            <div id="address">
-                <p>
-                    Address:<br>
-                    Tony's Pizza Factory<br>2122 N Clark Str.<br>Chicago, IL 60614, USA
-                </p>
-            </div>
-        </footer>
-    <script>
-        function validateForm() {
-            var button = document.getElementById("sendbutton");
-            var cname = checkName();
-            var cEmail = checkEmail();
-            var ctxtar = checkTextarea();
-            if ( cname && cEmail && ctxtar ){
-                button.disabled = false;
-            }
-            else {
-                button.disabled = true;
-            }
+<footer>
+    <div id="openinghours">
+        <p>
+            Hours:<br>
+            Mon - Thu: 11a.m. - 23a.m.<br>Fri - Sat: 11a.m. - 24a.m.<br>Sunday closed
+        </p>
+    </div>
+    <div id="quote">
+        <p>
+            <em>
+                "The Pizzeria is one place I have been wanting to visit for a long time. The reason being their Rustica
+                pizza which absolutely blew me away." - Jimmy
+            </em>
+        </p>
+    </div>
+    <div id="address">
+        <p>
+            Address:<br>
+            Tony's Pizza Factory<br>2122 N Clark Str.<br>Chicago, IL 60614, USA
+        </p>
+    </div>
+</footer>
+<script>
+    function validateForm() {
+        var cname = checkName();
+        var cemail = checkEmail();
+        var ctxtar = checkTextarea();
+        if (cname && cemail && ctxtar) {
+            return true;
         }
+        else {
+            return false;
+        }
+    }
 
-        function checkName() {
-            var feedback = document.getElementById("feedback");
-            var fullnameEl = document.getElementById("namePara");
-            var fullname = document.forms["feedback"]["fullname"].value;
-            if (fullname === "") {
-                var nameWarning = document.createElement("p");
-                var nameText = document.createTextNode("Name must not be empty.");
-                nameWarning.appendChild(nameText);
-                feedback.insertBefore(nameWarning, fullnameEl.nextSibling);
-                return false;
+    var nameCount = 0;
+
+    function checkName() {
+        var feedback = document.getElementById("feedback");
+        var fullnameEl = document.getElementById("namePara");
+        var fullname = document.forms["feedback"]["fullname"].value;
+        if (fullname === "" && nameCount === 0) {
+            var nameWarning = document.createElement("p");
+            var nameText = document.createTextNode("Name must not be empty.");
+            nameWarning.appendChild(nameText);
+            nameWarning.setAttribute("id", "nameWarning");
+            feedback.insertBefore(nameWarning, fullnameEl.nextSibling);
+            nameCount++;
+            return false;
+        }
+        else {
+            if (nameCount > 0) {
+                var nameWarning = document.getElementById("nameWarning");
+                feedback.removeChild(nameWarning);
+                nameCount--;
             }
-            else {
+            return true;
+        }
+    }
+
+    var emailCount = 0;
+
+    function checkEmail() {
+        var feedback = document.getElementById("feedback");
+        var emailEl = document.getElementById("emailPara");
+        var email = document.forms["feedback"]["email"].value;
+        var splitAt = email.split("@");
+        if (splitAt.length === 2) {
+            var splitDot = splitAt[1].split(".");
+            if (splitDot.length === 2) {
+                if (emailCount > 0) {
+                    var emailWarning = document.getElementById("emailWarning");
+                    feedback.removeChild(emailWarning);
+                    emailCount--;
+                }
                 return true;
             }
         }
-
-        function checkEmail() {
-            var feedback = document.getElementById("feedback");
-            var emailEl = document.getElementById("emailPara");
-            var email = document.forms["feedback"]["email"].value;
-            var splitAt = email.split("@");
-            if (splitAt.length === 2) {
-                var splitDot = splitAt[1].split(".");
-                if (splitDot.length === 2) {
-                    return true;
-                }
-            }
-            else {
+        else {
+            if (emailCount === 0) {
                 var warning = document.createElement("p");
                 var emailText = document.createTextNode("Email must be of the form 'test@example.com'.");
                 warning.appendChild(emailText);
+                warning.setAttribute("id", "emailWarning");
                 feedback.insertBefore(warning, emailEl.nextSibling);
+                emailCount++;
                 return false;
             }
         }
+    }
 
-        function checkTextarea() {
-            var feedback = document.getElementById("feedback");
-            var textareaEl = document.getElementById("textareaPara");
-            var textarea = document.forms["feedback"]["suggestion"].value;
-            if (textarea.length >= 50) {
-                return true;
+    var textareaCount = 0;
+
+    function checkTextarea() {
+        var feedback = document.getElementById("feedback");
+        var textareaEl = document.getElementById("textareaPara");
+        var textarea = document.forms["feedback"]["suggestion"].value;
+        if (textarea.length >= 50) {
+            if (textareaCount > 0) {
+                var textWarning = document.getElementById("textWarning");
+                feedback.removeChild(textWarning);
+                textareaCount--;
             }
-            else {
+            return true;
+        }
+        else {
+            if (textareaCount === 0) {
                 var textWarning = document.createElement("p");
                 var textText = document.createTextNode("Please write at least 50 characters.");
                 textWarning.appendChild(textText);
+                textWarning.setAttribute("id", "textWarning");
                 feedback.insertBefore(textWarning, textareaEl.nextSibling);
+                textareaCount++;
                 return false;
             }
         }
-    </script>
-    </body>
+    }
+</script>
+</body>
 </html>
