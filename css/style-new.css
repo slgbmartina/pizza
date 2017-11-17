@@ -1,4 +1,4 @@
-    /** CONSTANT PROPERTIES **/
+/** CONSTANT PROPERTIES **/
 
     /* Basic Elements */
 
@@ -17,7 +17,7 @@
             font-family: Helvetica sans-serif;
             height: 100%;
             width: 100%;
-            overflow-x: hidden;
+            overflow: hidden;
             background: url("../images/olive-wood.jpg");
             background-size: 100%;
             color: #000;
@@ -36,7 +36,7 @@
         #content
         {
             width: 100%;
-            min-height: 800px;
+            <!--min-height: 800px;-->
             z-index: 0;
             background-color: rgba(255, 255, 255, 0.3);
         }
@@ -152,7 +152,6 @@
     text-align: left;
     margin-left: 35%;
     display: none;
-    visibility: hidden;
     color: #ba0000;
 }
 

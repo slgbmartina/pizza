@@ -40,13 +40,11 @@ function toggleWarning(warningElement, shouldShow)
 {
     if (shouldShow)
     {
-        warningElement.style.visibility = 'visible';
         warningElement.style.display = 'block';
         return false;
     }
     else
     {
-        warningElement.style.visibility = 'hidden';
         warningElement.style.display = 'none';
         return true;
     }
