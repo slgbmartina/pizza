@@ -147,6 +147,12 @@
     background-color: #804200;
 }
 
+.validation
+{
+    visibility: hidden;
+    color: red;
+}
+
 
 /** RESPONSIVE PROPERTIES **/
 

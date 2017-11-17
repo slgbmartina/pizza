@@ -6,6 +6,7 @@
     <meta name="description" content="A Pizzeria in Chicago">
     <link rel="icon" href="../images/pizza-burger2.png">
     <link rel="stylesheet" href="../css/style-new.css">
+    <script type="text/javascript" src="../scripts/main.js" rel="script"></script>
     <title>Tony's Pizza Factory</title>
     <title>Feedback</title>
     <!-- Autoren: Martina Schwab, Marcel Sidler, Jeremy Roth (PiBS.BSc INF 2017.BE1) -->
@@ -50,17 +51,20 @@
                 <input class="blockinput" type="text" name="fullname" id="fullname">
             </label>
         </p>
+        <p id="nameValidation" class="validation">Name must not be empty.</p>
         <p class="question" id="emailPara">
             <label for="email">Your e-mail address?
                 <input class="blockinput" type="email" name="email" id="email">
             </label>
         </p>
+        <p id="mailValidation" class="validation">Please write at least 50 characters.</p>
         <p class="question" id="textareaPara">
             <label for="suggestion">What can we do better?
                 <textarea class="blockinput" name="suggestion" id="suggestion" rows="6" cols="50"
                           maxlength="800"></textarea>
             </label>
         </p>
+        <p id="textAreaValidation" class="validation">Please write at least 50 characters.</p>
         <input id="sendbutton" type="submit" value="Send">
     </form>
 </section>
@@ -87,101 +91,5 @@
         </p>
     </div>
 </footer>
-<script>
-    function validateForm() {
-        var cname = checkName();
-        var cemail = checkEmail();
-        var ctxtar = checkTextarea();
-        if (cname && cemail && ctxtar) {
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
-
-    var nameCount = 0;
-
-    function checkName() {
-        var feedback = document.getElementById("feedback");
-        var fullnameEl = document.getElementById("namePara");
-        var fullname = document.forms["feedback"]["fullname"].value;
-        if (fullname === "" && nameCount === 0) {
-            var nameWarning = document.createElement("p");
-            var nameText = document.createTextNode("Name must not be empty.");
-            nameWarning.appendChild(nameText);
-            nameWarning.setAttribute("id", "nameWarning");
-            feedback.insertBefore(nameWarning, fullnameEl.nextSibling);
-            nameCount++;
-            return false;
-        }
-        else {
-            if (nameCount > 0) {
-                var nameWarning = document.getElementById("nameWarning");
-                feedback.removeChild(nameWarning);
-                nameCount--;
-            }
-            return true;
-        }
-    }
-
-    var emailCount = 0;
-
-    function checkEmail() {
-        var feedback = document.getElementById("feedback");
-        var emailEl = document.getElementById("emailPara");
-        var email = document.forms["feedback"]["email"].value;
-        var splitAt = email.split("@");
-        if (splitAt.length === 2) {
-            var splitDot = splitAt[1].split(".");
-            if (splitDot.length === 2) {
-                if (emailCount > 0) {
-                    var emailWarning = document.getElementById("emailWarning");
-                    feedback.removeChild(emailWarning);
-                    emailCount--;
-                }
-                return true;
-            }
-        }
-        else {
-            if (emailCount === 0) {
-                var warning = document.createElement("p");
-                var emailText = document.createTextNode("Email must be of the form 'test@example.com'.");
-                warning.appendChild(emailText);
-                warning.setAttribute("id", "emailWarning");
-                feedback.insertBefore(warning, emailEl.nextSibling);
-                emailCount++;
-                return false;
-            }
-        }
-    }
-
-    var textareaCount = 0;
-
-    function checkTextarea() {
-        var feedback = document.getElementById("feedback");
-        var textareaEl = document.getElementById("textareaPara");
-        var textarea = document.forms["feedback"]["suggestion"].value;
-        if (textarea.length >= 50) {
-            if (textareaCount > 0) {
-                var textWarning = document.getElementById("textWarning");
-                feedback.removeChild(textWarning);
-                textareaCount--;
-            }
-            return true;
-        }
-        else {
-            if (textareaCount === 0) {
-                var textWarning = document.createElement("p");
-                var textText = document.createTextNode("Please write at least 50 characters.");
-                textWarning.appendChild(textText);
-                textWarning.setAttribute("id", "textWarning");
-                feedback.insertBefore(textWarning, textareaEl.nextSibling);
-                textareaCount++;
-                return false;
-            }
-        }
-    }
-</script>
 </body>
 </html>
