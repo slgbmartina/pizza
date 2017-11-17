@@ -7,14 +7,14 @@
         html
         {
             overflow-x: hidden;
-            font-family: Georgia serif;
+            font-family: Helvetica sans-serif;
         }
 
         body
         {
             margin: 0;
             padding: 0;
-            font-family: Georgia serif;
+            font-family: Helvetica sans-serif;
             height: 100%;
             width: 100%;
             overflow-x: hidden;
@@ -149,8 +149,11 @@
 
 .validation
 {
+    text-align: left;
+    margin-left: 35%;
+    display: none;
     visibility: hidden;
-    color: red;
+    color: #ba0000;
 }
 
 

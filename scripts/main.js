@@ -1,10 +1,12 @@
 function validateForm()
 {
-    var form = document.getElementById("feedback");
-    return checkName(form) && checkEmail(form) && checkTextarea(form);
+    var nameValidation = checkName();
+    var emailValidation = checkEmail();
+    var textAreaValidation = checkTextarea();
+    return nameValidation && emailValidation && textAreaValidation;
 }
 
-function checkName(form)
+function checkName()
 {
     var fullName = document.forms["feedback"]["fullname"].value;
     var nameWarning = document.getElementById("nameValidation");
@@ -12,70 +14,40 @@ function checkName(form)
     else return toggleWarning(nameWarning, false);
 }
 
-function checkEmail(form)
+function checkEmail()
 {
-    var emailEl = document.getElementById("emailPara");
     var email = document.forms["feedback"]["email"].value;
+    var mailWarning = document.getElementById("mailValidation");
     var splitAt = email.split("@");
     if (splitAt.length === 2) {
         var splitDot = splitAt[1].split(".");
         if (splitDot.length === 2) {
-            if (emailCount > 0) {
-                var emailWarning = document.getElementById("emailWarning");
-                form.removeChild(emailWarning);
-                emailCount--;
-            }
-            return true;
+            return toggleWarning(mailWarning, false);
         }
     }
-    else {
-        if (emailCount === 0) {
-            var warning = document.createElement("p");
-            var emailText = document.createTextNode("Email must be of the form 'test@example.com'.");
-            warning.appendChild(emailText);
-            warning.setAttribute("id", "emailWarning");
-            form.insertBefore(warning, emailEl.nextSibling);
-            emailCount++;
-            return false;
-        }
-    }
+    else return toggleWarning(mailWarning, true);
 }
 
-var textareaCount = 0;
-
-function checkTextarea(form)
+function checkTextarea()
 {
-    var textareaEl = document.getElementById("textareaPara");
     var textarea = document.forms["feedback"]["suggestion"].value;
-    var textAreaValidation = document.getElementById('textAreaValidation');
-    var textWarning;
-    if (textarea.length >= 50)
-    {
-        if (textAreaValidation.visibility === 'visible') textAreaValidation.visibility = 'hidden';
-        return true;
-    }
-    else {
-        if (textAreaValidation.visibility === 'hidden') textAreaValidation.visibility = 'visible';
-        /**textWarning = document.createElement("p");
-         var textText = document.createTextNode("Please write at least 50 characters.");
-         textWarning.appendChild(textText);
-         textWarning.setAttribute("id", "textWarning");
-         feedback.insertBefore(textWarning, textareaEl.nextSibling);
-         textareaCount++;**/
-        return false;
-    }
+    var textAreaWarning = document.getElementById("textAreaValidation");
+    if (textarea.length < 50 || textarea === null) return toggleWarning(textAreaWarning, true);
+    else return toggleWarning(textAreaWarning, false);
 }
 
 function toggleWarning(warningElement, shouldShow)
 {
     if (shouldShow)
     {
-        if (warningElement.visibility === 'hidden') warningElement.visibility = 'visible';
+        warningElement.style.visibility = 'visible';
+        warningElement.style.display = 'block';
         return false;
     }
     else
     {
-        if (warningElement.visibility === 'visible') warningElement.visibility = 'hidden';
+        warningElement.style.visibility = 'hidden';
+        warningElement.style.display = 'none';
         return true;
     }
 }
