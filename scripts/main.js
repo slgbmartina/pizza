@@ -1,51 +1,34 @@
 function validateForm()
 {
-    var nameValidation = checkName();
-    var emailValidation = checkEmail();
-    var textAreaValidation = checkTextarea();
-    return nameValidation && emailValidation && textAreaValidation;
+    var nameValid = checkName();
+    var mailValid = checkEmail();
+    var textValid = checkTextarea();
+    return nameValid && mailValid && textValid;
 }
 
 function checkName()
 {
     var fullName = document.forms["feedback"]["fullname"].value;
     var nameWarning = document.getElementById("nameValidation");
-    if (fullName === "" || fullName === null) return toggleWarning(nameWarning, true);
-    else return toggleWarning(nameWarning, false);
+    return toggleWarning(nameWarning, fullName === "" || fullName === null);
 }
 
 function checkEmail()
 {
     var email = document.forms["feedback"]["email"].value;
     var mailWarning = document.getElementById("mailValidation");
-    var splitAt = email.split("@");
-    if (splitAt.length === 2) {
-        var splitDot = splitAt[1].split(".");
-        if (splitDot.length === 2) {
-            return toggleWarning(mailWarning, false);
-        }
-    }
-    else return toggleWarning(mailWarning, true);
+    return toggleWarning(mailWarning, !/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email) || email === '' || email === null);
 }
 
 function checkTextarea()
 {
     var textarea = document.forms["feedback"]["suggestion"].value;
     var textAreaWarning = document.getElementById("textAreaValidation");
-    if (textarea.length < 50 || textarea === null) return toggleWarning(textAreaWarning, true);
-    else return toggleWarning(textAreaWarning, false);
+    return toggleWarning(textAreaWarning, textarea.length < 50 || textarea === null);
 }
 
 function toggleWarning(warningElement, shouldShow)
 {
-    if (shouldShow)
-    {
-        warningElement.style.display = 'block';
-        return false;
-    }
-    else
-    {
-        warningElement.style.display = 'none';
-        return true;
-    }
+    warningElement.style.display = shouldShow ? 'block' : 'none';
+    return !shouldShow;
 }
