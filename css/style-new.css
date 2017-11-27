@@ -8,7 +8,7 @@ html {
 }
 
 body {
-    margin: 0;
+    margin-bottom: 10%;
     padding: 0;
     font-family: Helvetica sans-serif;
     height: 100%;
@@ -45,6 +45,7 @@ footer {
     margin-top: 0;
     margin-bottom: 0;
 }
+
 
 /* Specific Elements */
 
@@ -148,6 +149,10 @@ input[type=checkbox]:checked ~ nav {
     margin-left: 35%;
     display: none;
     color: #ba0000;
+}
+
+.ingredients small{
+    display: block;
 }
 
 /** RESPONSIVE PROPERTIES **/
