@@ -1,40 +1,64 @@
-function doMagic(xhttp){
-    xhttp.send();
-    xhttp.onreadystatechange = function() {
-        if (xhttp.readyState === 4 && xhttp.status === 200) {
-            //var myArr = xhttp.responseText;
-            console.log(xhttp.responseText);
-        }
-    };
-    console.log(xhttp.responseText);
-    var lis = xhttp.parse()
-    //console.log(myArr);
-}
 function loadPizzas() {
     var xhttp = new XMLHttpRequest();
     xhttp.open("GET", "https://tonyspizzafactory.herokuapp.com/api/pizzas", true);
     xhttp.setRequestHeader("Authorization", "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.MQ.bYceSpllpyYQixgNzDt7dpCkEojdv3NKD-85XLXfdI4");
-    doMagic(xhttp);
+    xhttp.send();
+    xhttp.onreadystatechange = function () {
+        if (xhttp.readyState === 4 && xhttp.status === 200) {
+            var myArr = JSON.parse(xhttp.responseText);
+            var menu = document.getElementsByClassName("menu");
+            for (var i = 0; i < myArr.length; i++) {
+                var oldDiv = document.getElementsByClassName("menulist");
+
+                var newDiv = document.createElement("div");
+
+                var newImg = document.createElement("img");
+                newImg.setAttribute("src", myArr[i]["imageUrl"]);
+                newImg.setAttribute("alt", myArr[i]["name"]);
+
+                var newP = document.createElement("p");
+                newP.innerHTML = myArr[i]["name"];
+
+                var newDiv2 = document.createElement("div");
+                newDiv2.setAttribute("class", "price");
+                newDiv2.innerHTML = myArr[i]["prize"];
+
+                var newButton = document.createElement("button");
+                newButton.setAttribute("onclick", "");
+                newButton.innerHTML = "To Cart";
+                newDiv2.appendChild(newButton);
+
+                var newDiv3 = document.createElement("div");
+                newDiv3.setAttribute("class", "ingredients");
+
+                var newSmall = document.createElement("small");
+                newSmall.innerHTML = myArr[i]["ingredients"];
+                newDiv3.appendChild(newSmall);
+
+                newDiv.appendChild(newImg);
+                newDiv.appendChild(newP);
+                newDiv.appendChild(newDiv2);
+                newDiv.appendChild(newDiv3);
+                oldDiv[0].appendChild(newDiv);
+
+
+            }
+
+        }
+    };
+
 }
-function loadSalads(){
+
+function loadSalads() {
     var xhttp = new XMLHttpRequest();
     xhttp.open("GET", "https://tonyspizzafactory.herokuapp.com/api/salads", true);
     xhttp.setRequestHeader("Authorization", "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.MQ.bYceSpllpyYQixgNzDt7dpCkEojdv3NKD-85XLXfdI4");
     doMagic(xhttp);
 }
-function loadDrinks(){
+
+function loadDrinks() {
     var xhttp = new XMLHttpRequest();
     xhttp.open("GET", "https://tonyspizzafactory.herokuapp.com/api/drinks", true);
     xhttp.setRequestHeader("Authorization", "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.MQ.bYceSpllpyYQixgNzDt7dpCkEojdv3NKD-85XLXfdI4");
     doMagic(xhttp);
 }
-// var item = document.createElement("div");
-// var img = document.createElement("img");
-// var title = document.createElement("p");
-// var price = document.createElement("div"); //button + text
-// var ingr = document.createElement("div");
-// document.getElementsByClassName("menulist").appendChild(item);
-// item.appendChild(img);
-// item.appendChild(title);
-// item.appendChild(price);
-// item.appendChild(ingr);
