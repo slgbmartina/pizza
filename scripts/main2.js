@@ -42,9 +42,24 @@ function loadPizzas() {
             for (var i = 0; i < myArr.length; i++) {
                 var oldDiv = document.getElementsByClassName("menulist");
 
-                var newDiv = createMenuItem(myArr, i, oldDiv);
+                var newDiv = document.createElement("div");
+                newDiv.setAttribute("class", "menu");
 
-                createButton(newDiv, myArr, i);
+                var newImg = document.createElement("img");
+                newImg.setAttribute("src", myArr[i]["imageUrl"]);
+                newImg.setAttribute("alt", myArr[i]["name"]);
+
+                var newP = document.createElement("p");
+                newP.innerHTML = myArr[i]["name"];
+
+                var newDiv2 = document.createElement("div");
+                newDiv2.setAttribute("class", "price");
+                newDiv2.innerHTML = myArr[i]["prize"];
+
+                var newButton = document.createElement("button");
+                newButton.setAttribute("onclick", "");
+                newButton.innerHTML = "To Cart";
+                newDiv2.appendChild(newButton);
 
                 var newDiv3 = document.createElement("div");
                 newDiv3.setAttribute("class", "ingredients");
@@ -53,7 +68,11 @@ function loadPizzas() {
                 newSmall.innerHTML = myArr[i]["ingredients"];
                 newDiv3.appendChild(newSmall);
 
+                newDiv.appendChild(newImg);
+                newDiv.appendChild(newP);
+                newDiv.appendChild(newDiv2);
                 newDiv.appendChild(newDiv3);
+                oldDiv[0].appendChild(newDiv);
             }
 
         }
@@ -70,7 +89,15 @@ function loadSalads() {
             for (var i = 0; i < myArr.length; i++) {
                 var oldDiv = document.getElementsByClassName("menulist");
 
-                var newDiv = createMenuItem(myArr, i, oldDiv);
+                var newDiv = document.createElement("div");
+                newDiv.setAttribute("class", "menu");
+
+                var newImg = document.createElement("img");
+                newImg.setAttribute("src", myArr[i]["imageUrl"]);
+                newImg.setAttribute("alt", myArr[i]["name"]);
+
+                var newP = document.createElement("p");
+                newP.innerHTML = myArr[i]["name"];
 
                 var newSelect = document.createElement("select");
                 newSelect.setAttribute("class", "price");
@@ -84,8 +111,14 @@ function loadSalads() {
                 newOption2.innerHTML = "Italian Dressing";
                 newSelect.appendChild(newOption2);
 
-                createButton(newDiv, myArr, i);
+                var newDiv2 = document.createElement("div");
+                newDiv2.setAttribute("class", "price");
+                newDiv2.innerHTML = myArr[i]["prize"];
 
+                var newButton = document.createElement("button");
+                newButton.setAttribute("onclick", "");
+                newButton.innerHTML = "To Cart";
+                newDiv2.appendChild(newButton);
 
                 var newDiv3 = document.createElement("div");
                 newDiv3.setAttribute("class", "ingredients");
@@ -94,8 +127,11 @@ function loadSalads() {
                 newSmall.innerHTML = myArr[i]["ingredients"];
                 newDiv3.appendChild(newSmall);
 
-
+                newDiv.appendChild(newImg);
+                newDiv.appendChild(newP);
+                newDiv.appendChild(newDiv2);
                 newDiv.appendChild(newDiv3);
+                oldDiv[0].appendChild(newDiv);
             }
         }
     }
@@ -110,45 +146,39 @@ function loadDrinks() {
             for (var i = 0; i < myArr.length; i++) {
                 var oldDiv = document.getElementsByClassName("menulist");
 
-                var newDiv = createMenuItem(myArr, i, oldDiv);
+                var newDiv = document.createElement("div");
+                newDiv.setAttribute("class", "menu");
+
+                var newImg = document.createElement("img");
+                newImg.setAttribute("src", myArr[i]["imageUrl"]);
+                newImg.setAttribute("alt", myArr[i]["name"]);
+
+                var newP = document.createElement("p");
+                newP.innerHTML = myArr[i]["name"];
 
                 var newP2 = document.createElement("p");
                 newP2.setAttribute("class", "sauce");
                 newP2.innerHTML = myArr[i]["volume"];
 
-                var newDiv2 = createButton(newDiv, myArr, i);
-                newDiv.appendChild(newP2);
+                var newDiv2 = document.createElement("div");
+                newDiv2.setAttribute("class", "price");
+                newDiv2.innerHTML = myArr[i]["prize"];
 
+                var newButton = document.createElement("button");
+                newButton.setAttribute("onclick", "");
+                newButton.innerHTML = "To Cart";
+                newDiv2.appendChild(newButton);
+
+                newDiv.appendChild(newImg);
+                newDiv.appendChild(newP);
+                newDiv.appendChild(newP2);
+                newDiv.appendChild(newDiv2);
+                oldDiv[0].appendChild(newDiv);
             }
         }
     }
 }
-function createMenuItem(myArr, i, oldDiv){
-    var newDiv = document.createElement("div");
-    newDiv.setAttribute("class", "menu");
 
-    var newImg = document.createElement("img");
-    newImg.setAttribute("src", myArr[i]["imageUrl"]);
-    newImg.setAttribute("alt", myArr[i]["name"]);
-
-    var newP = document.createElement("p");
-    newP.innerHTML = myArr[i]["name"];
-    newDiv.appendChild(newImg);
-    newDiv.appendChild(newP);
-    oldDiv[0].appendChild(newDiv);
-    return newDiv;
-}
-function createButton(newDiv, myArr, i){
-    var newDiv2 = document.createElement("div");
-    newDiv2.setAttribute("class", "price");
-    newDiv2.innerHTML = myArr[i]["prize"];
-
-    var newButton = document.createElement("button");
-    newButton.setAttribute("onclick", "");
-    newButton.innerHTML = "To Cart";
-    newDiv2.appendChild(newButton);
-    newDiv.appendChild(newDiv2);
-}
 function request(url) {
     var xhttp = new XMLHttpRequest();
     xhttp.open("GET", url, true);
