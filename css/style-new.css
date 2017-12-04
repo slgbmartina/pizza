@@ -8,6 +8,7 @@ html {
 }
 
 body {
+    margin-left:0;
     margin-bottom: 10%;
     padding: 0;
     font-family: Helvetica sans-serif;
@@ -177,6 +178,8 @@ input[type=checkbox]:checked ~ nav {
 
     #content img {
         max-width: calc(100% - 30px);
+
+
 
     }
 
@@ -358,6 +361,9 @@ input[type=checkbox]:checked ~ nav {
 
     .menu img {
         width: 100%;
+        width: 16em;
+        height: 9em;
+
     }
 
     .menu p {
