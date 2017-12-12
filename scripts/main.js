@@ -48,7 +48,10 @@ function loadPizzas() {
                 newPizzaImage.setAttribute('alt', myArr[i]['name']);
                 var newPizzaName = addElement(newPizzaBox, 'p', null, myArr[i]['name']);
                 var newPizzaPrice = addElement(newPizzaBox, 'div', 'price', myArr[i]['prize']);
-                var newPizzaToCartButton = addElement(newPizzaPrice, 'button', null, 'To Cart');
+                var id = "pizzaButton" + i.toString();
+                var newPizzaToCartButton = addElement(newPizzaPrice, 'button', null, 'Order');
+                newPizzaToCartButton.setAttribute('onclick', 'getItems("pizza","' + id.toString() + '")');
+                newPizzaToCartButton.setAttribute('id', id);
                 var newPizzaIngredientsBox = addElement(newPizzaBox, 'div', 'ingredients', null);
                 var ingredients = myArr[i]['ingredients'].toString();
                 var newPizzaIngredients = addElement(newPizzaIngredientsBox, 'small', null, ingredients.replace(/,/g, ', '));
@@ -77,7 +80,10 @@ function loadSalads() {
                 var newDressingOptionFrench = addElement(newDressingSelection, 'option', null, 'French Dressing');
                 var newDressingOptionItalian = addElement(newDressingSelection, 'option', null, 'Italian Dressing');
                 var newSaladPrice = addElement(newSaladBox, 'div', 'price', myArr[i]['prize']);
-                var newSaladToCartButton = addElement(newSaladPrice, 'button', null, 'To Cart');
+                var id = "saladButton" + i.toString();
+                var newSaladToCartButton = addElement(newSaladPrice, 'button', null, 'Order');
+                newSaladToCartButton.setAttribute('onclick', 'getItems("salad","' + id.toString() + '")');
+                newSaladToCartButton.setAttribute('id', id);
                 var newSaladIngredientsBox = addElement(newSaladBox, 'div', 'ingredients', null);
                 var ingredients = myArr[i]['ingredients'].toString();
                 var newSaladIngredients = addElement(newSaladIngredientsBox, 'small', null, ingredients.replace(/,/g, ', '));
@@ -105,7 +111,10 @@ function loadDrinks() {
                 var newDrinkName = addElement(newDrinkBox, 'p', null, myArr[i]['name']);
                 var newDrinkVolume = addElement(newDrinkBox, 'p', 'sauce', myArr[i]['volume']);
                 var newDrinkPrice = addElement(newDrinkBox, 'div', 'price', myArr[i]['prize']);
-                var newCartButton = addElement(newDrinkPrice, 'button', null, 'To Cart');
+                var id = "drinkButton" + i.toString();
+                var newCartButton = addElement(newDrinkPrice, 'button', null, 'Order');
+                newCartButton.setAttribute('onclick', 'getItems("softdrink","' + id.toString() + '")');
+                newCartButton.setAttribute('id', id);
             }
         }
     }
@@ -125,6 +134,53 @@ function addElement(parentElement, elementTag, elementClass, elementContent)
 function request(url) {
     var xhttp = new XMLHttpRequest();
     xhttp.open('GET', url, true);
+    xhttp.setRequestHeader('Authorization', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.MQ.bYceSpllpyYQixgNzDt7dpCkEojdv3NKD-85XLXfdI4');
+    return xhttp;
+}
+
+function getItems(type, id) {
+    var item;
+    var prevEl = document.getElementById(id).parentNode.previousSibling;
+    switch(type) {
+        case "pizza":
+            item = {
+                "type": type,
+                "name": prevEl.innerHTML
+            }
+            break;
+        case "salad":
+            item = {
+                "type": type,
+                "name": prevEl.previousSibling.innerHTML,
+                "dressing": prevEl.value
+            }
+            break;
+        case "softdrink":
+            item = {
+                "type": type,
+                "name": prevEl.previousSibling.innerHTML,
+                "cl": prevEl.value
+            }
+            break;
+        default:
+    }
+    console.log(item);
+    sendData(item);
+}
+
+function sendData(params) {
+    var xhttp = postRequest('https://tonyspizzafactory.herokuapp.com/api/orders');
+    xhttp.onreadystatechange = function () {
+        if (xhttp.readyState === 4 && xhttp.status === 200) {
+            console.log(xhttp.responseText);
+        }
+    }
+    xhttp.send(params);
+}
+
+function postRequest(url) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.open('POST', url, true);
     xhttp.setRequestHeader('Authorization', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.MQ.bYceSpllpyYQixgNzDt7dpCkEojdv3NKD-85XLXfdI4');
     return xhttp;
 }
