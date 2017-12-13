@@ -146,21 +146,21 @@ function getItems(type, id) {
             item = {
                 "type": type,
                 "name": prevEl.innerHTML
-            }
+            };
             break;
         case "salad":
             item = {
                 "type": type,
                 "name": prevEl.previousSibling.innerHTML,
                 "dressing": prevEl.value
-            }
+            };
             break;
         case "softdrink":
             item = {
                 "type": type,
                 "name": prevEl.previousSibling.innerHTML,
                 "cl": prevEl.value
-            }
+            };
             break;
         default:
     }
@@ -174,13 +174,14 @@ function sendData(params) {
         if (xhttp.readyState === 4 && xhttp.status === 200) {
             console.log(xhttp.responseText);
         }
-    }
-    xhttp.send(params);
+    };
+    xhttp.send(JSON.stringify(params));
 }
 
 function postRequest(url) {
     var xhttp = new XMLHttpRequest();
     xhttp.open('POST', url, true);
+    xhttp.setRequestHeader('Content-Type', 'application/json');
     xhttp.setRequestHeader('Authorization', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.MQ.bYceSpllpyYQixgNzDt7dpCkEojdv3NKD-85XLXfdI4');
     return xhttp;
 }
