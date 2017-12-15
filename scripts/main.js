@@ -33,13 +33,17 @@ function toggleWarning(warningElement, shouldShow)
     return !shouldShow;
 }
 
-function loadPizzas() {
+function loadPizzas()
+{
     var xhttp = request('https://tonyspizzafactory.herokuapp.com/api/pizzas');
     xhttp.send();
-    xhttp.onreadystatechange = function () {
-        if (xhttp.readyState === 4 && xhttp.status === 200) {
+    xhttp.onreadystatechange = function ()
+    {
+        if (xhttp.readyState === 4 && xhttp.status === 200)
+        {
             var myArr = JSON.parse(xhttp.responseText);
-            for (var i = 0; i < myArr.length; i++) {
+            for (var i = 0; i < myArr.length; i++)
+            {
                 var pizzasBox = document.getElementsByClassName('menulist')[0];
 
                 var newPizzaBox = addElement(pizzasBox, 'div', 'menu', null);
@@ -184,4 +188,61 @@ function postRequest(url) {
     xhttp.setRequestHeader('Content-Type', 'application/json');
     xhttp.setRequestHeader('Authorization', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.MQ.bYceSpllpyYQixgNzDt7dpCkEojdv3NKD-85XLXfdI4');
     return xhttp;
+}
+
+function sendGetRequest(url)
+{
+    var request = new XMLHttpRequest();
+    request.open('GET', url, true);
+    request.setRequestHeader('Authorization', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.MQ.bYceSpllpyYQixgNzDt7dpCkEojdv3NKD-85XLXfdI4');
+    request.send();
+    request.onreadystatechange = function() { if (handleRequestAnswer(request.readyState)) return JSON.parse(request.responseText); }
+}
+
+function sendPostRequest(url, data)
+{
+    var request = new XMLHttpRequest();
+    request.open('POST', url, true);
+    request.setRequestHeader('Content-Type', 'application/json');
+    request.setRequestHeader('Authorization', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.MQ.bYceSpllpyYQixgNzDt7dpCkEojdv3NKD-85XLXfdI4');
+    request.send(JSON.stringify(data));
+    request.onreadystatechange = function() { if (!handleRequestAnswer(request.readyState)) toggleWarning(bla, true); }
+}
+
+function handleRequestAnswer(state)
+{
+    switch (state)
+    {
+        default:
+        case 500:
+            console.log('Error 500: Unknown Error!');
+            return false;
+
+        case 200:
+            console.log('Yey');
+            return true;
+
+        case 201:
+            return true;
+
+        case 401:
+            console.log('Error 401: You are not authorized to do this! You hacker!');
+            return false;
+
+        case 404:
+            console.log('Error 404: Resource not found!');
+            return false;
+
+        case 407:
+            console.log('Error 407: Proxy is in place! Server no like that!');
+            return false;
+
+        case 418:
+            console.log('I am a teapot!');
+            return false;
+
+        case 427:
+            console.log('Stanley has left his office!');
+            return false;
+    }
 }
