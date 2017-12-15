@@ -35,8 +35,7 @@ function toggleWarning(warningElement, shouldShow)
 
 function loadPizzas()
 {
-    var xhttp = request('https://tonyspizzafactory.herokuapp.com/api/pizzas');
-    xhttp.send();
+    var xhttp = sendGetRequest('https://tonyspizzafactory.herokuapp.com/api/pizzas');
     xhttp.onreadystatechange = function ()
     {
         if (xhttp.readyState === 4 && xhttp.status === 200)
@@ -66,8 +65,7 @@ function loadPizzas()
 }
 
 function loadSalads() {
-    var xhttp = request('https://tonyspizzafactory.herokuapp.com/api/salads');
-    xhttp.send();
+    var xhttp = sendGetRequest('https://tonyspizzafactory.herokuapp.com/api/salads');
     xhttp.onreadystatechange = function () {
         if (xhttp.readyState === 4 && xhttp.status === 200) {
             var myArr = JSON.parse(xhttp.responseText);
@@ -97,8 +95,7 @@ function loadSalads() {
 }
 
 function loadDrinks() {
-    var xhttp = request('https://tonyspizzafactory.herokuapp.com/api/softdrinks');
-    xhttp.send();
+    var xhttp = sendGetRequest('https://tonyspizzafactory.herokuapp.com/api/softdrinks');
     xhttp.onreadystatechange = function () {
         if (xhttp.readyState === 4 && xhttp.status === 200) {
             var myArr = JSON.parse(xhttp.responseText);
@@ -119,6 +116,7 @@ function loadDrinks() {
                 var newCartButton = addElement(newDrinkPrice, 'button', null, 'Order');
                 newCartButton.setAttribute('onclick', 'getItems("softdrink","' + id.toString() + '")');
                 newCartButton.setAttribute('id', id);
+
             }
         }
     }
@@ -133,13 +131,6 @@ function addElement(parentElement, elementTag, elementClass, elementContent)
     if (parentElement !== null) parentElement.appendChild(newElement);
 
     return newElement;
-}
-
-function request(url) {
-    var xhttp = new XMLHttpRequest();
-    xhttp.open('GET', url, true);
-    xhttp.setRequestHeader('Authorization', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.MQ.bYceSpllpyYQixgNzDt7dpCkEojdv3NKD-85XLXfdI4');
-    return xhttp;
 }
 
 function getItems(type, id) {
@@ -169,25 +160,7 @@ function getItems(type, id) {
         default:
     }
     console.log(item);
-    sendData(item);
-}
-
-function sendData(params) {
-    var xhttp = postRequest('https://tonyspizzafactory.herokuapp.com/api/orders');
-    xhttp.onreadystatechange = function () {
-        if (xhttp.readyState === 4 && xhttp.status === 200) {
-            console.log(xhttp.responseText);
-        }
-    };
-    xhttp.send(JSON.stringify(params));
-}
-
-function postRequest(url) {
-    var xhttp = new XMLHttpRequest();
-    xhttp.open('POST', url, true);
-    xhttp.setRequestHeader('Content-Type', 'application/json');
-    xhttp.setRequestHeader('Authorization', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.MQ.bYceSpllpyYQixgNzDt7dpCkEojdv3NKD-85XLXfdI4');
-    return xhttp;
+    sendPostRequest('https://tonyspizzafactory.herokuapp.com/api/orders', item);
 }
 
 function sendGetRequest(url)
@@ -196,7 +169,8 @@ function sendGetRequest(url)
     request.open('GET', url, true);
     request.setRequestHeader('Authorization', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.MQ.bYceSpllpyYQixgNzDt7dpCkEojdv3NKD-85XLXfdI4');
     request.send();
-    request.onreadystatechange = function() { if (handleRequestAnswer(request.readyState)) return JSON.parse(request.responseText); }
+    request.onreadystatechange = function() { if (handleRequestAnswer(request.status)) return JSON.parse(request.responseText); };
+    return request;
 }
 
 function sendPostRequest(url, data)
@@ -206,43 +180,50 @@ function sendPostRequest(url, data)
     request.setRequestHeader('Content-Type', 'application/json');
     request.setRequestHeader('Authorization', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.MQ.bYceSpllpyYQixgNzDt7dpCkEojdv3NKD-85XLXfdI4');
     request.send(JSON.stringify(data));
-    request.onreadystatechange = function() { if (!handleRequestAnswer(request.readyState)) toggleWarning(bla, true); }
+    request.onreadystatechange = function() {
+        var message = handleRequestAnswer(request.status);
+        if (message !== 'OK') {
+            var error = document.getElementById('error');
+            error.innerHTML = message;
+            error.style.zIndex = 4;
+            error.style.display = 'block';
+        }
+    };
+    return request;
 }
 
 function handleRequestAnswer(state)
 {
+
+
     switch (state)
     {
         default:
         case 500:
             console.log('Error 500: Unknown Error!');
-            return false;
+            return 'Error 500: Unknown Error!';
 
         case 200:
             console.log('Yey');
-            return true;
+            return 'OK';
 
         case 201:
-            return true;
+            return 'Your order has been placed successfully!';
 
         case 401:
             console.log('Error 401: You are not authorized to do this! You hacker!');
-            return false;
+            return 'Error 401: You are not authorized to do this.';
 
         case 404:
             console.log('Error 404: Resource not found!');
-            return false;
+            return 'Error 404: Resource not found!';
 
         case 407:
             console.log('Error 407: Proxy is in place! Server no like that!');
-            return false;
+            return 'Error 407: Proxy is in place! Server no like that!';
 
         case 418:
             console.log('I am a teapot!');
-            return false;
-
-        case 427:
-            console.log('Stanley has left his office!');
-            return false;
+            return 'I am a teapot!';
     }
 }

@@ -156,6 +156,12 @@ input[type=checkbox]:checked ~ nav {
     display: block;
 }
 
+#error {
+    display: none;
+    float: left;
+    margin: 50% 50%;
+}
+
 /** RESPONSIVE PROPERTIES **/
 
 @media (max-width: 690px) {
