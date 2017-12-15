@@ -182,11 +182,13 @@ function sendPostRequest(url, data)
     request.send(JSON.stringify(data));
     request.onreadystatechange = function() {
         var message = handleRequestAnswer(request.status);
+        var error = document.getElementById('error');
         if (message !== 'OK') {
-            var error = document.getElementById('error');
             error.innerHTML = message;
             error.style.zIndex = 4;
             error.style.display = 'block';
+        }else{
+            error.style.display = 'none';
         }
     };
     return request;
@@ -208,7 +210,7 @@ function handleRequestAnswer(state)
             return 'OK';
 
         case 201:
-            return 'Your order has been placed successfully!';
+            return 'OK';
 
         case 401:
             console.log('Error 401: You are not authorized to do this! You hacker!');

@@ -159,7 +159,12 @@ input[type=checkbox]:checked ~ nav {
 #error {
     display: none;
     float: left;
-    margin: 50% 50%;
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    background-color: #F4F4F3;
+
+
 }
 
 /** RESPONSIVE PROPERTIES **/
