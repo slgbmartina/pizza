@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Menulist>
+    <menu>
+        <name> Picante</name>
+        <price >16$</price>
+        <id>1</id>
+        <ingredients>
+            <ingredient>Tomato</ingredient>
+            <ingredient>Mozzarella</ingredient>
+            <ingredient>Spicy Salami</ingredient>
+            <ingredient>Chilies</ingredient>
+            <ingredient>Oregano</ingredient>
+        </ingredients>
+        <image>
+            <url>https://farm5.staticflickr.com/4042/4660357797_09dcd917b1.jpg</url>
+        </image>
+    </menu>
+    <menu>
+        <name>Giardino</name>
+        <price >14$</price>
+        <id>2</id>
+        <ingredients>
+            <ingredient>Tomato</ingredient>
+            <ingredient>Mozzarella</ingredient>
+            <ingredient>Artichokes</ingredient>
+            <ingredient>Fresh Mushrooms</ingredient>
+        </ingredients>
+        <image>
+            <url>https://farm4.staticflickr.com/3565/5818252079_29635c03cc.jpg</url>
+        </image>
+    </menu>
+    <menu>
+        <name>Prosciutto e funghi</name>
+        <price >15$</price>
+        <id>3</id>
+        <ingredients>
+            <ingredient>Tomato</ingredient>
+            <ingredient>Mozzarella</ingredient>
+            <ingredient>Ham</ingredient>
+            <ingredient>Fresh Mushrooms</ingredient>
+            <ingredient>Oregano</ingredient>
+        </ingredients>
+        <image>
+            <url>https://farm9.staticflickr.com/8326/8096659940_4e0a65e598.jpg</url>
+        </image>
+    </menu>
+    <menu>
+        <name>Quattro formaggi</name>
+        <price >13$</price>
+        <id>4</id>
+        <ingredients>
+            <ingredient>Tomato</ingredient>
+            <ingredient>Mozzarella</ingredient>
+            <ingredient>Parmesan</ingredient>
+            <ingredient>Gorgonzola</ingredient>
+        </ingredients>
+        <image>
+            <url>https://farm3.staticflickr.com/2797/4344770705_b6d159f799.jpg</url>
+        </image>
+    </menu>
+    <menu>
+        <name>Quatro stagioni</name>
+        <price >17$</price>
+        <id>5</id>
+        <ingredients>
+            <ingredient>Tomato</ingredient>
+            <ingredient>Mozzarella</ingredient>
+            <ingredient>Ham</ingredient>
+            <ingredient>Artichokes</ingredient>
+            <ingredient>Fresh Mushrooms</ingredient>
+        </ingredients>
+        <image>
+            <url>https://farm5.staticflickr.com/4078/4932649252_b0aaa733ae.jpg</url>
+        </image>
+    </menu>
+    <menu>
+        <name>Stromboli</name>
+        <price >12$</price>
+        <id>6</id>
+        <ingredients>
+            <ingredient>Tomato</ingredient>
+            <ingredient>Mozzarella</ingredient>
+            <ingredient>Fresh Chilies</ingredient>
+            <ingredient>Olives</ingredient>
+            <ingredient>Oregano</ingredient>
+        </ingredients>
+        <image>
+            <url>https://farm6.staticflickr.com/5661/22907779119_b2ec1efa11.jpg</url>
+        </image>
+    </menu>
+    <menu>
+        <name>Verde</name>
+        <price >13$</price>
+        <id>7</id>
+        <ingredients>
+            <ingredient>Tomato</ingredient>
+            <ingredient>Mozzarella</ingredient>
+            <ingredient>Broccoli</ingredient>
+            <ingredient>Spinach</ingredient>
+            <ingredient>Oregano</ingredient>
+        </ingredients>
+        <image>
+            <url>https://farm7.staticflickr.com/6044/6363618775_e8714fb517.jpg</url>
+        </image>
+    </menu>
+    <menu>
+        <name>Rustica</name>
+        <price >13$</price>
+        <id>8</id>
+        <ingredients>
+            <ingredient>Tomato</ingredient>
+            <ingredient>Mozzarella</ingredient>
+            <ingredient>Ham</ingredient>
+            <ingredient>Bacon</ingredient>
+            <ingredient>Onions</ingredient>
+            <ingredient>Garlic</ingredient>
+            <ingredient>Oregano</ingredient>
+        </ingredients>
+        <image>
+            <url>https://farm9.staticflickr.com/8574/16488100040_988f0caa70.jpg</url>
+        </image>
+    </menu>
+
+</Menulist>
