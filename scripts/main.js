@@ -35,28 +35,35 @@ function toggleWarning(warningElement, shouldShow)
 
 function loadPizzas()
 {
-    var xhttp = sendGetRequest('https://tonyspizzafactory.herokuapp.com/api/pizzas');
+    var xhttp = sendXMLRequest('http://www.pibs.ch/xml/pizzas_camenzindMarco.xml');
     xhttp.onreadystatechange = function ()
     {
         if (xhttp.readyState === 4 && xhttp.status === 200)
         {
-            var myArr = JSON.parse(xhttp.responseText);
-            for (var i = 0; i < myArr.length; i++)
+            var xmlDoc = xhttp.responseXML;
+            var xmlKiddos = xmlDoc.children[0].children;
+            console.log(xmlKiddos);
+            var xmlLength = xmlKiddos.length;
+            for (var i = 0; i <xmlLength; i++)
             {
                 var pizzasBox = document.getElementsByClassName('menulist')[0];
 
                 var newPizzaBox = addElement(pizzasBox, 'div', 'menu', null);
                 var newPizzaImage = addElement(newPizzaBox, 'img', null, null);
-                newPizzaImage.setAttribute('src', myArr[i]['imageUrl']);
-                newPizzaImage.setAttribute('alt', myArr[i]['name']);
-                var newPizzaName = addElement(newPizzaBox, 'p', null, myArr[i]['name']);
-                var newPizzaPrice = addElement(newPizzaBox, 'div', 'price', myArr[i]['prize']);
-                var id = "pizzaButton" + i.toString();
+                newPizzaImage.setAttribute('src',xmlKiddos[i].getElementsByTagName('imageUrl')[0].innerHTML);
+                newPizzaImage.setAttribute('alt', xmlKiddos[i].getElementsByTagName('name')[0].innerHTML);
+                var newPizzaName = addElement(newPizzaBox, 'p', null, xmlKiddos[i].getElementsByTagName('name')[0].innerHTML);
+                var newPizzaPrice = addElement(newPizzaBox, 'div', 'price', xmlKiddos[i].getElementsByTagName('preis')[0].innerHTML);
+                var id = "pizzaButton" + xmlKiddos[i].getAttribute('id').toString();
                 var newPizzaToCartButton = addElement(newPizzaPrice, 'button', null, 'Order');
                 newPizzaToCartButton.setAttribute('onclick', 'getItems("pizza","' + id.toString() + '")');
                 newPizzaToCartButton.setAttribute('id', id);
                 var newPizzaIngredientsBox = addElement(newPizzaBox, 'div', 'ingredients', null);
-                var ingredients = myArr[i]['ingredients'].toString();
+                var ingredients = [];
+                for (var j = 0; j < xmlKiddos[i].getElementsByTagName('zutaten')[0].children.length; j++) {
+                    ingredients.push(xmlKiddos[i].getElementsByTagName('zutaten')[0].children[j].innerHTML);
+                }
+                ingredients = ingredients.toString();
                 var newPizzaIngredients = addElement(newPizzaIngredientsBox, 'small', null, ingredients.replace(/,/g, ', '));
             }
         }
@@ -172,7 +179,13 @@ function sendGetRequest(url)
     request.onreadystatechange = function() { if (handleRequestAnswer(request.status)) return JSON.parse(request.responseText); };
     return request;
 }
-
+function sendXMLRequest(url)
+{
+    var request = new XMLHttpRequest();
+    request.open('GET', url, true);
+    request.send();
+    return request;
+}
 function sendPostRequest(url, data)
 {
     var request = new XMLHttpRequest();

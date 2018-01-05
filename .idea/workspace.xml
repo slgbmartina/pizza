@@ -12,21 +12,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="180" column="48" lean-forward="false" selection-start-line="180" selection-start-column="48" selection-end-line="180" selection-end-column="48" />
-              <folding />
+            <state relative-caret-position="657">
+              <caret line="61" column="37" lean-forward="false" selection-start-line="61" selection-start-column="37" selection-end-line="61" selection-end-column="37" />
+              <folding>
+                <element signature="n#!!block;n#loadSalads#0" expanded="false" />
+                <element signature="n#!!block;n#loadDrinks#0" expanded="false" />
+                <element signature="n#!!block;n#addElement#0" expanded="false" />
+                <element signature="n#!!block;n#getItems#0" expanded="false" />
+                <element signature="n#!!block;n#sendPostRequest#0" expanded="false" />
+                <element signature="n#!!block;n#handleRequestAnswer#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="scratch_5.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="scratch_5.html" pinned="false" current-in-tab="false">
         <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_5.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
-              <caret line="12" column="31" lean-forward="false" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+            <state relative-caret-position="680">
+              <caret line="31" column="43" lean-forward="false" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -35,8 +42,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/html/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="-1962">
+              <caret line="2" column="10" lean-forward="true" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -45,7 +52,7 @@
       <file leaf-file-name="pizza.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/html/pizza.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1020">
+            <state relative-caret-position="748">
               <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
               <folding />
             </state>
@@ -113,8 +120,8 @@
         <option value="$PROJECT_DIR$/html/salad.html" />
         <option value="$PROJECT_DIR$/html/drinks.html" />
         <option value="$PROJECT_DIR$/html/pizza.html" />
-        <option value="$PROJECT_DIR$/scripts/main.js" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_5.html" />
+        <option value="$PROJECT_DIR$/scripts/main.js" />
       </list>
     </option>
   </component>
@@ -125,9 +132,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1273" />
-    <option name="width" value="1294" />
-    <option name="height" value="1407" />
+    <option name="x" value="2391" />
+    <option name="y" value="-9" />
+    <option name="width" value="2418" />
+    <option name="height" value="1318" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -144,6 +152,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -165,8 +175,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -303,11 +311,12 @@
       <workItem from="1513191230517" duration="457000" />
       <workItem from="1513376586237" duration="1788000" />
       <workItem from="1513589806646" duration="4708000" />
+      <workItem from="1515158141580" duration="6164000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24399000" />
+    <option name="totallyTimeSpent" value="30563000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -319,9 +328,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <frame x="2391" y="-9" width="2418" height="1318" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11625" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298731" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -352,7 +362,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -367,7 +379,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="n#!!block;n#loadSalads#0" expanded="false" />
+            <element signature="n#!!block;n#loadDrinks#0" expanded="false" />
+            <element signature="n#!!block;n#addElement#0" expanded="false" />
+            <element signature="n#!!block;n#getItems#0" expanded="false" />
+            <element signature="n#!!block;n#sendPostRequest#0" expanded="false" />
+            <element signature="n#!!block;n#handleRequestAnswer#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -413,7 +432,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2057">
           <caret line="121" column="12" lean-forward="false" selection-start-line="121" selection-start-column="12" selection-end-line="121" selection-end-column="12" />
-          <folding />
+          <folding>
+            <element signature="n#!!block;n#loadSalads#0" expanded="false" />
+            <element signature="n#!!block;n#loadDrinks#0" expanded="false" />
+            <element signature="n#!!block;n#addElement#0" expanded="false" />
+            <element signature="n#!!block;n#getItems#0" expanded="false" />
+            <element signature="n#!!block;n#sendPostRequest#0" expanded="false" />
+            <element signature="n#!!block;n#handleRequestAnswer#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -459,7 +485,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3751">
           <caret line="121" column="12" lean-forward="false" selection-start-line="121" selection-start-column="12" selection-end-line="121" selection-end-column="12" />
-          <folding />
+          <folding>
+            <element signature="n#!!block;n#loadSalads#0" expanded="false" />
+            <element signature="n#!!block;n#loadDrinks#0" expanded="false" />
+            <element signature="n#!!block;n#addElement#0" expanded="false" />
+            <element signature="n#!!block;n#getItems#0" expanded="false" />
+            <element signature="n#!!block;n#sendPostRequest#0" expanded="false" />
+            <element signature="n#!!block;n#handleRequestAnswer#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -505,7 +538,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="n#!!block;n#loadSalads#0" expanded="false" />
+            <element signature="n#!!block;n#loadDrinks#0" expanded="false" />
+            <element signature="n#!!block;n#addElement#0" expanded="false" />
+            <element signature="n#!!block;n#getItems#0" expanded="false" />
+            <element signature="n#!!block;n#sendPostRequest#0" expanded="false" />
+            <element signature="n#!!block;n#handleRequestAnswer#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -513,7 +553,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="n#!!block;n#loadSalads#0" expanded="false" />
+            <element signature="n#!!block;n#loadDrinks#0" expanded="false" />
+            <element signature="n#!!block;n#addElement#0" expanded="false" />
+            <element signature="n#!!block;n#getItems#0" expanded="false" />
+            <element signature="n#!!block;n#sendPostRequest#0" expanded="false" />
+            <element signature="n#!!block;n#handleRequestAnswer#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -576,7 +623,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1113">
           <caret line="184" column="17" lean-forward="true" selection-start-line="184" selection-start-column="17" selection-end-line="184" selection-end-column="17" />
-          <folding />
+          <folding>
+            <element signature="n#!!block;n#loadSalads#0" expanded="false" />
+            <element signature="n#!!block;n#loadDrinks#0" expanded="false" />
+            <element signature="n#!!block;n#addElement#0" expanded="false" />
+            <element signature="n#!!block;n#getItems#0" expanded="false" />
+            <element signature="n#!!block;n#sendPostRequest#0" expanded="false" />
+            <element signature="n#!!block;n#handleRequestAnswer#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -584,7 +638,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3751">
           <caret line="121" column="12" lean-forward="false" selection-start-line="121" selection-start-column="12" selection-end-line="121" selection-end-column="12" />
-          <folding />
+          <folding>
+            <element signature="n#!!block;n#loadSalads#0" expanded="false" />
+            <element signature="n#!!block;n#loadDrinks#0" expanded="false" />
+            <element signature="n#!!block;n#addElement#0" expanded="false" />
+            <element signature="n#!!block;n#getItems#0" expanded="false" />
+            <element signature="n#!!block;n#sendPostRequest#0" expanded="false" />
+            <element signature="n#!!block;n#handleRequestAnswer#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -630,7 +691,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="n#!!block;n#loadSalads#0" expanded="false" />
+            <element signature="n#!!block;n#loadDrinks#0" expanded="false" />
+            <element signature="n#!!block;n#addElement#0" expanded="false" />
+            <element signature="n#!!block;n#getItems#0" expanded="false" />
+            <element signature="n#!!block;n#sendPostRequest#0" expanded="false" />
+            <element signature="n#!!block;n#handleRequestAnswer#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -638,7 +706,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="n#!!block;n#loadSalads#0" expanded="false" />
+            <element signature="n#!!block;n#loadDrinks#0" expanded="false" />
+            <element signature="n#!!block;n#addElement#0" expanded="false" />
+            <element signature="n#!!block;n#getItems#0" expanded="false" />
+            <element signature="n#!!block;n#sendPostRequest#0" expanded="false" />
+            <element signature="n#!!block;n#handleRequestAnswer#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -684,35 +759,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/pizza.html">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_5.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        <state relative-caret-position="680">
+          <caret line="31" column="43" lean-forward="false" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/main.js">
+    <entry file="file://$PROJECT_DIR$/html/pizza.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="180" column="48" lean-forward="false" selection-start-line="180" selection-start-column="48" selection-end-line="180" selection-end-column="48" />
+        <state relative-caret-position="748">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/html/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="-1962">
+          <caret line="2" column="10" lean-forward="true" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_5.html">
+    <entry file="file://$PROJECT_DIR$/scripts/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="12" column="31" lean-forward="false" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
-          <folding />
+        <state relative-caret-position="657">
+          <caret line="61" column="37" lean-forward="false" selection-start-line="61" selection-start-column="37" selection-end-line="61" selection-end-column="37" />
+          <folding>
+            <element signature="n#!!block;n#loadSalads#0" expanded="false" />
+            <element signature="n#!!block;n#loadDrinks#0" expanded="false" />
+            <element signature="n#!!block;n#addElement#0" expanded="false" />
+            <element signature="n#!!block;n#getItems#0" expanded="false" />
+            <element signature="n#!!block;n#sendPostRequest#0" expanded="false" />
+            <element signature="n#!!block;n#handleRequestAnswer#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
